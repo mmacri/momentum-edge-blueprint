@@ -26,7 +26,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/ca0223ac-21cf-453e-aabf-f56e6ca95a25.png" 
                 alt="Momentum Edge Consulting" 
-                className="h-10 w-auto"
+                className="h-16 w-auto lg:h-20"
               />
             </Link>
           </div>
