@@ -24,9 +24,9 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-300">
               <img 
-                src="/lovable-uploads/ca0223ac-21cf-453e-aabf-f56e6ca95a25.png" 
+                src="/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png" 
                 alt="Momentum Edge Consulting" 
-                className="h-16 w-auto lg:h-20 xl:h-24"
+                className="h-20 w-auto lg:h-24 xl:h-28"
               />
             </Link>
           </div>
