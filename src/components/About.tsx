@@ -5,13 +5,13 @@ const About = () => {
   const achievements = [
     { number: "25+", label: "Years of Technology Leadership" },
     { number: "1000's", label: "Successful IT Implementations" },
-    { number: "50+", label: "Healthcare Practices Supported" },
+    { number: "50+", label: "Dental/Medical Practices Supported" },
     { number: "25+", label: "AI Projects Delivered" }
   ];
 
   const expertise = [
     "Technology Leadership & Strategic Planning",
-    "Dental/Medical Software Management Solutions", 
+    "Dental/Medical Practice Management Solutions", 
     "AI Innovation & Responsible Governance",
     "Partner Enablement & Strategic Alliances",
     "Cybersecurity & Risk Management",
@@ -28,7 +28,7 @@ const About = () => {
               About Momentum Edge & Mike Macri
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
-              Extensive professional background in technology leadership, dental/medical software management, 
+              Extensive professional background in technology leadership, dental/medical practice management solutions, 
               AI innovation, compliance, partner enablement, and comprehensive IT management with proven results. 
               Guidance available as needed or proactively.
             </p>
@@ -58,7 +58,7 @@ const About = () => {
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
                 With over 25 years of experience in technology leadership and strategic consulting, 
-                Mike Macri brings deep expertise across dental/medical software management, AI innovation, partner enablement, 
+                Mike Macri brings deep expertise across dental/medical practice management solutions, AI innovation, partner enablement, 
                 and comprehensive IT management solutions that deliver measurable results.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
