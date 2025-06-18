@@ -1,146 +1,100 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Target, Shield, Hospital, Bot, Cloud, Building2 } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="home" className="hero-bg py-24 lg:py-36">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto text-center animate-fade-in">
-          <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-white">
-            Your Strategic Technology Partner
-            <span className="text-green-400 block mt-4">From Virtual CIO Leadership to AI Innovation</span>
-          </h1>
-          
-          <p className="text-lg lg:text-xl xl:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed font-medium">
-            Comprehensive technology consulting and strategic IT leadership for businesses of every size. 
-            No long-term contracts. 100% vendor-neutral advice. Enterprise expertise with startup agility.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
-            <a 
-              href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
-              className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center"
-            >
-              Book Your Free Strategy Session
-            </a>
-            <Link to="/services">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-2 border-green-400 bg-green-500 text-white hover:bg-green-600 hover:border-green-500 font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300"
-              >
-                Explore Our Services
-              </Button>
-            </Link>
-          </div>
-
-          {/* Enhanced Core Service Pillars with Custom Icons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: "Virtual CIO & IT Leadership",
-                description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost",
-                icon: Target,
-                color: "text-blue-400"
-              },
-              {
-                title: "Healthcare IT Solutions",
-                description: "HIPAA-compliant technology management for medical and dental practices",
-                icon: Hospital,
-                color: "text-red-400"
-              },
-              {
-                title: "Cybersecurity & Compliance",
-                description: "Virtual CISO services and compliance frameworks (HIPAA, SOC 2, NIST)",
-                icon: Shield,
-                color: "text-yellow-400"
-              },
-              {
-                title: "AI Solutions & Governance",
-                description: "Responsible AI implementation with custom applications and governance frameworks",
-                icon: Bot,
-                color: "text-purple-400"
-              },
-              {
-                title: "Cloud & Infrastructure",
-                description: "Complete cloud migrations, Office 365 implementations, and IT infrastructure optimization",
-                icon: Cloud,
-                color: "text-cyan-400"
-              },
-              {
-                title: "Small Office IT Setup",
-                description: "New office setups, relocations, and complete IT solutions for small and remote offices",
-                icon: Building2,
-                color: "text-orange-400"
-              }
-            ].map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <div 
-                  key={index} 
-                  className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 group cursor-pointer"
+    <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-green-900 text-white py-20 lg:py-32 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 to-blue-500/10"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-fade-in">
+              <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight">
+                Strategic IT Solutions &{" "}
+                <span className="text-green-400">AI Innovation</span>
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-200 mb-8 leading-relaxed font-medium">
+                Get Fortune 500-level technology leadership without the full-time cost. 
+                Expert CIO advisory, healthcare IT, and AI governance solutions.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <a 
+                  href="mailto:momentumedgeconsulting@gmail.com?subject=Free Technology Assessment Request&body=Hello, I would like to schedule a complimentary technology assessment to discuss my business needs."
+                  className="bg-green-500 hover:bg-green-600 text-white font-bold text-lg px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-xl inline-flex items-center justify-center group"
                 >
-                  <div className={`${service.color} mb-4 flex justify-center`}>
-                    <IconComponent size={48} className="group-hover:scale-110 transition-transform duration-300" />
-                  </div>
-                  <h3 className="font-semibold text-lg text-slate-900 group-hover:text-green-600 transition-colors duration-300 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
+                  Get Free Assessment
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+                <Link to="/services">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="bg-white/10 border-white/30 text-white hover:bg-white/20 font-semibold text-lg px-8 py-4 hover:scale-105 transition-all duration-300"
+                  >
+                    View Services
+                  </Button>
+                </Link>
+              </div>
 
-          {/* Competitive Differentiators */}
-          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-            <h3 className="text-2xl font-bold text-white mb-6">Why Choose Momentum Edge?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                {
-                  title: "100% Vendor Neutral",
-                  description: "Objective advice with no product sales bias"
-                },
-                {
-                  title: "Flexible Engagements", 
-                  description: "Project-based or ongoing - no long-term contracts"
-                },
-                {
-                  title: "Enterprise Expertise",
-                  description: "Fortune 500 experience for businesses of all sizes"
-                },
-                {
-                  title: "AI & Innovation Ready",
-                  description: "Leading-edge technology guidance and governance"
-                }
-              ].map((differentiator, index) => (
-                <div key={index} className="text-center">
-                  <h4 className="font-semibold text-green-400 mb-2">{differentiator.title}</h4>
-                  <p className="text-sm text-gray-200">{differentiator.description}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="flex items-center">
+                  <CheckCircle className="text-green-400 mr-3" size={20} />
+                  <span className="font-medium">No Long-Term Contracts</span>
                 </div>
-              ))}
+                <div className="flex items-center">
+                  <CheckCircle className="text-green-400 mr-3" size={20} />
+                  <span className="font-medium">100% Vendor Neutral</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="text-green-400 mr-3" size={20} />
+                  <span className="font-medium">20+ Years Experience</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="text-green-400 mr-3" size={20} />
+                  <span className="font-medium">HIPAA Compliance Expert</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Quick Navigation */}
-          <div className="mt-16 text-center">
-            <p className="text-gray-300 text-lg mb-4">
-              Ready to accelerate your business with strategic technology leadership?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
-              <Link to="/services" className="text-green-400 hover:text-green-300 transition-colors duration-300">
-                View Complete Service Portfolio →
-              </Link>
-              <Link to="/industries" className="text-green-400 hover:text-green-300 transition-colors duration-300">
-                See Industries We Serve →
-              </Link>
-              <Link to="/contact" className="text-green-400 hover:text-green-300 transition-colors duration-300">
-                Schedule Free Consultation →
-              </Link>
+            <div className="animate-scale-in lg:pl-8">
+              <div className="relative">
+                <div className="bg-white/10 backdrop-blur-lg rounded-xl p-8 shadow-2xl border border-white/20">
+                  <h3 className="text-2xl font-bold mb-6 text-center">Why Choose Momentum Edge?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <div className="bg-green-500 rounded-full p-2 mr-4 mt-1">
+                        <CheckCircle size={16} className="text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Strategic Leadership</h4>
+                        <p className="text-gray-200 text-sm">CIO-level guidance without the executive salary</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="bg-green-500 rounded-full p-2 mr-4 mt-1">
+                        <CheckCircle size={16} className="text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Healthcare Expertise</h4>
+                        <p className="text-gray-200 text-sm">HIPAA-compliant solutions for medical practices</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <div className="bg-green-500 rounded-full p-2 mr-4 mt-1">
+                        <CheckCircle size={16} className="text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">AI Innovation</h4>
+                        <p className="text-gray-200 text-sm">Responsible AI implementation and governance</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
