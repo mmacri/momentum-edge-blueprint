@@ -130,7 +130,6 @@ const Services = () => {
             with flexible engagement models and 100% vendor-neutral guidance.
           </p>
           
-          {/* Value Proposition Callout */}
           <div className="mt-8 bg-green-50 rounded-xl p-6 max-w-4xl mx-auto border border-green-200">
             <p className="text-green-800 font-semibold">
               ✓ No Long-Term Contracts &nbsp;•&nbsp; ✓ 100% Vendor Neutral &nbsp;•&nbsp; ✓ Enterprise Expertise &nbsp;•&nbsp; ✓ Flexible Engagements
@@ -173,7 +172,6 @@ const Services = () => {
           })}
         </div>
 
-        {/* CTA Section */}
         <div className="text-center mt-16">
           <div className="bg-slate-900 rounded-xl p-8 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Technology Strategy?</h3>

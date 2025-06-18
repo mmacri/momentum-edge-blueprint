@@ -62,7 +62,6 @@ const Index = () => {
       <Header />
       <Hero />
       
-      {/* Value Proposition Section */}
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
@@ -75,7 +74,6 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Key Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             {keyStats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -108,13 +106,11 @@ const Index = () => {
             })}
           </div>
 
-          {/* Enhanced Social Proof Section */}
           <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-200 mb-16">
             <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">What Our Clients Say</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="text-center">
-                  {/* Star Rating */}
                   <div className="flex justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} size={20} className="text-yellow-400 fill-current" />
