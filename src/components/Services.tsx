@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Shield, Hospital, Bot, Cloud, Building2, Handshake, BarChart3 } from "lucide-react";
 
@@ -83,7 +82,7 @@ const Services = () => {
         "Office relocation and IT infrastructure moves",
         "Remote work solutions and secure connectivity",
         "Vendor coordination (ISP, telecom, hardware providers)",
-        "Ongoing IT support and helpdesk services"
+        "Strategic IT support and maintenance planning"
       ],
       icon: Building2,
       color: "text-orange-500"
