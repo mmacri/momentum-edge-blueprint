@@ -1,52 +1,61 @@
+
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
-    "Outsourced CIO & IT Advisory",
-    "Healthcare IT Solutions",
-    "AI Solutions & Governance",
-    "Small Office & Remote IT",
-    "Partner Enablement",
-    "Strategic Go-To-Market"
+    { name: "Outsourced CIO & IT Advisory", path: "/services#cio" },
+    { name: "Healthcare IT Solutions", path: "/services#healthcare" },
+    { name: "AI Solutions & Governance", path: "/services#ai" },
+    { name: "Small Office & Remote IT", path: "/services#small-office" },
+    { name: "Partner Enablement", path: "/services#partner" },
+    { name: "Strategic Go-To-Market", path: "/services#gtm" }
   ];
 
   const industries = [
-    "Healthcare",
-    "Small to Mid-sized Businesses",
-    "Small & Remote Offices",
-    "Enterprise Technology Providers",
-    "MSPs and GSIs"
+    { name: "Healthcare", path: "/industries" },
+    { name: "Small to Mid-sized Businesses", path: "/industries" },
+    { name: "Small & Remote Offices", path: "/industries" },
+    { name: "Enterprise Technology Providers", path: "/industries" },
+    { name: "MSPs and GSIs", path: "/industries" }
   ];
 
   return (
-    <footer className="bg-slate-900 text-white py-16">
-      <div className="container mx-auto px-4">
+    <footer className="footer-bg py-16">
+      <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Momentum Edge Consulting</h3>
-            <p className="text-white/80 mb-6">
+            <h3 className="footer-heading">Momentum Edge Consulting</h3>
+            <p className="text-gray-300 mb-6 leading-relaxed font-medium">
               Strategic IT solutions and AI innovation for businesses of every size.
             </p>
-            <div className="space-y-2 text-white/80">
-              <p>📞 (555) 123-4567</p>
-              <p>📧 mike@momentumedgeconsulting.com</p>
-              <p>💼 linkedin.com/in/mikemacri</p>
+            <div className="space-y-3 text-gray-300">
+              <p className="flex items-center font-medium">
+                <span className="mr-2">📞</span> (555) 123-4567
+              </p>
+              <p className="flex items-center font-medium">
+                <span className="mr-2">📧</span> mike@momentumedgeconsulting.com
+              </p>
+              <p className="flex items-center font-medium">
+                <span className="mr-2">💼</span> linkedin.com/in/mikemacri
+              </p>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Services</h4>
-            <ul className="space-y-2">
+            <h4 className="footer-heading">Services</h4>
+            <ul className="space-y-3">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a 
-                    href={`/services#service-${index}`} 
-                    className="text-white/80 hover:text-blue-400 transition-colors text-sm"
+                  <Link 
+                    to={service.path} 
+                    className="footer-link text-sm font-medium"
                   >
-                    {service}
-                  </a>
+                    {service.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -54,16 +63,16 @@ const Footer = () => {
 
           {/* Industries */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Industries</h4>
-            <ul className="space-y-2">
+            <h4 className="footer-heading">Industries</h4>
+            <ul className="space-y-3">
               {industries.map((industry, index) => (
                 <li key={index}>
-                  <a 
-                    href="/industries" 
-                    className="text-white/80 hover:text-blue-400 transition-colors text-sm"
+                  <Link 
+                    to={industry.path} 
+                    className="footer-link text-sm font-medium"
                   >
-                    {industry}
-                  </a>
+                    {industry.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -71,48 +80,48 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xl font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <h4 className="footer-heading">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
-                <a href="/" className="text-white/80 hover:text-blue-400 transition-colors">
+                <Link to="/" className="footer-link font-medium">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="text-white/80 hover:text-blue-400 transition-colors">
+                <Link to="/services" className="footer-link font-medium">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/industries" className="text-white/80 hover:text-blue-400 transition-colors">
+                <Link to="/industries" className="footer-link font-medium">
                   Industries
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/about" className="text-white/80 hover:text-blue-400 transition-colors">
+                <Link to="/about" className="footer-link font-medium">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="text-white/80 hover:text-blue-400 transition-colors">
+                <Link to="/contact" className="footer-link font-medium">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 pt-8">
+        <div className="border-t border-gray-600 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-white/60 text-sm mb-4 md:mb-0">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0 font-medium">
               © {currentYear} Momentum Edge Consulting. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
-              <a href="#privacy" className="text-white/60 hover:text-white transition-colors">
+              <a href="#privacy" className="text-gray-400 hover:text-green-400 transition-colors font-medium">
                 Privacy Policy
               </a>
-              <a href="#terms" className="text-white/60 hover:text-white transition-colors">
+              <a href="#terms" className="text-gray-400 hover:text-green-400 transition-colors font-medium">
                 Terms of Service
               </a>
             </div>

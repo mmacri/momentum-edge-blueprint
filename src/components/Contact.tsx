@@ -7,28 +7,28 @@ const Contact = () => {
     {
       icon: "📞",
       title: "Phone Consultation",
-      description: "Schedule a direct call to discuss your technology needs",
+      description: "Schedule a direct call to discuss your technology needs and challenges",
       action: "Call Now",
       contact: "(555) 123-4567"
     },
     {
       icon: "📧",
       title: "Email Inquiry",
-      description: "Send us your questions and requirements",
+      description: "Send us your questions and detailed requirements for personalized solutions",
       action: "Send Email",
       contact: "mike@momentumedgeconsulting.com"
     },
     {
       icon: "💼",
       title: "LinkedIn Connect",
-      description: "Connect for professional networking and insights",
+      description: "Connect for professional networking and industry insights",
       action: "Connect on LinkedIn",
       contact: "linkedin.com/in/mikemacri"
     },
     {
       icon: "📅",
       title: "Calendly Booking",
-      description: "Book a strategic consultation session",
+      description: "Book a comprehensive strategic consultation session",
       action: "Schedule Meeting",
       contact: "calendly.com/momentum-edge"
     }
@@ -36,20 +36,20 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h2 className="text-3xl lg:text-5xl font-bold text-primary mb-8 heading-enhanced">
               Ready to Accelerate Your Business?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Let's discuss how strategic IT solutions and AI innovation can transform your business. 
-              Schedule your free consultation today.
+            <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed font-medium">
+              Let's discuss how strategic IT solutions and AI innovation can transform your business operations. 
+              Schedule your complimentary consultation today and discover actionable strategies.
             </p>
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-white font-bold px-12 py-6 text-xl hover-scale"
+              className="primary-cta hover-scale"
             >
               Book Your Free Strategy Session
             </Button>
@@ -60,25 +60,27 @@ const Contact = () => {
             {contactMethods.map((method, index) => (
               <Card 
                 key={index} 
-                className="text-center hover:shadow-xl transition-all duration-300 hover-scale bg-white border-0 shadow-lg"
+                className="feature-card group text-center"
               >
                 <CardHeader className="pb-4">
-                  <div className="text-4xl mb-4">{method.icon}</div>
-                  <CardTitle className="text-lg text-primary">
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {method.icon}
+                  </div>
+                  <CardTitle className="text-lg text-primary font-semibold group-hover:text-green-500 transition-colors duration-300">
                     {method.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <p className="text-gray-600 mb-4 text-sm">
+                  <p className="text-gray-600 mb-4 text-sm font-medium leading-relaxed">
                     {method.description}
                   </p>
                   <Button 
                     variant="outline" 
-                    className="w-full border-accent text-accent hover:bg-accent hover:text-white"
+                    className="w-full secondary-cta mb-3"
                   >
                     {method.action}
                   </Button>
-                  <p className="text-xs text-gray-500 mt-2 font-mono">
+                  <p className="text-xs text-gray-500 font-mono bg-gray-50 p-2 rounded">
                     {method.contact}
                   </p>
                 </CardContent>
@@ -87,13 +89,13 @@ const Contact = () => {
           </div>
 
           {/* Quick Contact Form */}
-          <Card className="max-w-2xl mx-auto bg-gray-50 border-0 shadow-lg">
+          <Card className="max-w-2xl mx-auto feature-card">
             <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-primary">
+              <CardTitle className="text-2xl text-primary heading-enhanced">
                 Quick Inquiry Form
               </CardTitle>
-              <p className="text-gray-600">
-                Tell us about your technology challenges and goals
+              <p className="text-gray-600 font-medium">
+                Tell us about your technology challenges and strategic goals
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -101,20 +103,20 @@ const Contact = () => {
                 <input 
                   type="text" 
                   placeholder="Your Name" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-accent focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
                 />
                 <input 
                   type="email" 
                   placeholder="Email Address" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-accent focus:outline-none"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
                 />
               </div>
               <input 
                 type="text" 
                 placeholder="Company Name" 
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-accent focus:outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
               />
-              <select className="w-full p-3 border border-gray-300 rounded-lg focus:border-accent focus:outline-none text-gray-700">
+              <select className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 text-gray-700 font-medium">
                 <option value="">Select Primary Interest</option>
                 <option value="cio">Outsourced CIO & IT Advisory</option>
                 <option value="healthcare">Healthcare IT Solutions</option>
@@ -124,12 +126,12 @@ const Contact = () => {
                 <option value="gtm">Strategic Go-To-Market</option>
               </select>
               <textarea 
-                placeholder="Describe your technology challenges or goals..." 
+                placeholder="Describe your technology challenges or strategic goals..." 
                 rows={4}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-accent focus:outline-none resize-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 resize-none font-medium"
               ></textarea>
               <Button 
-                className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3 text-lg"
+                className="w-full primary-cta"
               >
                 Send Inquiry
               </Button>

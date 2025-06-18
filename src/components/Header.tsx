@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -22,30 +22,30 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-primary hover:text-green-500 transition-colors duration-300">
+            <Link to="/" className="text-xl lg:text-2xl font-bold text-primary hover:text-green-500 transition-colors duration-300">
               Momentum Edge Consulting
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+            <Link to="/" className="nav-link">
               Home
             </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
-              <Link to="/services" className="flex items-center text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+              <Link to="/services" className="flex items-center nav-link">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-300" />
               </Link>
-              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200">
                 <div className="p-4">
                   {services.map((service, index) => (
                     <a
                       key={index}
                       href={service.path}
-                      className="block py-3 px-4 text-sm text-gray-700 hover:text-green-500 hover:bg-green-50 rounded-md transition-all duration-300"
+                      className="block py-3 px-4 text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-green-50 rounded-md transition-all duration-300"
                     >
                       {service.name}
                     </a>
@@ -54,31 +54,32 @@ const Header = () => {
               </div>
             </div>
 
-            <Link to="/industries" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+            <Link to="/industries" className="nav-link">
               Industries
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+            <Link to="/about" className="nav-link">
               About
             </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+            <Link to="/contact" className="nav-link">
               Contact
             </Link>
             
-            <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-md transition-all duration-300 hover-scale">
+            <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover-scale shadow-lg">
               Free Strategy Session
             </Button>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden"
+            className="lg:hidden p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
           >
-            <div className="w-6 h-6 flex flex-col justify-center items-center">
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-0.5'}`}></span>
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`bg-gray-600 block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-0.5'}`}></span>
-            </div>
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-gray-600" />
+            ) : (
+              <Menu className="w-6 h-6 text-gray-600" />
+            )}
           </button>
         </div>
 
@@ -86,31 +87,33 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden pb-6 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+              <Link to="/" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
                 Home
               </Link>
               <div>
-                <Link to="/services" className="text-gray-900 font-semibold mb-3 block hover:text-green-500 transition-colors">Services</Link>
+                <Link to="/services" className="text-gray-900 font-semibold mb-3 block hover:text-green-500 transition-colors py-2">
+                  Services
+                </Link>
                 {services.map((service, index) => (
                   <a
                     key={index}
                     href={service.path}
-                    className="block py-2 pl-4 text-sm text-gray-600 hover:text-green-500 transition-colors duration-300"
+                    className="block py-2 pl-4 text-sm font-medium text-gray-600 hover:text-green-500 transition-colors duration-300"
                   >
                     {service.name}
                   </a>
                 ))}
               </div>
-              <Link to="/industries" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+              <Link to="/industries" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
                 Industries
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+              <Link to="/about" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
                 About
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
+              <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
                 Contact
               </Link>
-              <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold w-full py-3 rounded-md transition-all duration-300">
+              <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4">
                 Free Strategy Session
               </Button>
             </div>
