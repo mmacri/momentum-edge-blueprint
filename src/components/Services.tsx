@@ -6,7 +6,7 @@ const Services = () => {
   const services = [
     {
       id: "vcio",
-      title: "Virtual CIO & IT Leadership",
+      title: "Virtual CIO & IT Strategy",
       description: "Strategic technology leadership and executive-level IT guidance for businesses that need CIO expertise without the full-time cost.",
       features: [
         "Technology strategy and multi-year roadmap development",
@@ -20,7 +20,7 @@ const Services = () => {
     },
     {
       id: "vciso", 
-      title: "Virtual CISO & Cybersecurity Leadership",
+      title: "Virtual CISO & Cybersecurity Advisory",
       description: "Strategic cybersecurity oversight and compliance guidance to protect your business and meet regulatory requirements.",
       features: [
         "Cybersecurity strategy and risk assessment",
@@ -48,7 +48,7 @@ const Services = () => {
     },
     {
       id: "ai",
-      title: "AI Solutions & Governance",
+      title: "AI Solutions & Guidance",
       description: "Responsible AI implementation with custom applications, automation strategies, and governance frameworks for ethical AI adoption.",
       features: [
         "AI strategy development and opportunity assessment",
@@ -90,7 +90,7 @@ const Services = () => {
     },
     {
       id: "partner",
-      title: "Partner Enablement & Channel Strategy",
+      title: "Partner & Channel Strategy",
       description: "Strategic alliance development and partner program creation for technology companies and solution providers seeking growth.",
       features: [
         "Partner program development and enablement frameworks",

@@ -14,7 +14,7 @@ const Index = () => {
   try {
     const highlights = [
       {
-        title: "Virtual CIO Leadership",
+        title: "Virtual CIO Strategy",
         description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost",
         icon: Target,
         color: "text-blue-500"
@@ -32,7 +32,7 @@ const Index = () => {
         color: "text-red-500"
       },
       {
-        title: "AI Innovation & Governance",
+        title: "AI Solutions & Guidance",
         description: "Responsible AI implementation with custom applications and governance frameworks for emerging regulations",
         icon: Bot,
         color: "text-purple-500"
@@ -56,9 +56,7 @@ const Index = () => {
 
     const keyStats = [
       { number: "20+", label: "Years Healthcare IT Experience" },
-      { number: "100%", label: "Vendor Neutral Approach" },
-      { number: "450%", label: "Average Pipeline Growth" },
-      { number: "24/7", label: "Support & Monitoring" }
+      { number: "100%", label: "Vendor Neutral Approach" }
     ];
 
     console.log("Index data initialized successfully");
@@ -82,7 +80,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
               {keyStats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>

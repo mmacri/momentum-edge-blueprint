@@ -1,18 +1,19 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const achievements = [
-    { number: "25+", label: "Years of Technology Leadership" },
+    { number: "25+", label: "Years of Technology Advisory" },
     { number: "1000's", label: "Successful IT Implementations" },
     { number: "Dental & Medical", label: "Practice Management Solutions" },
     { number: "Small to Medium", label: "Office Management Solutions" }
   ];
 
   const expertise = [
-    "Technology Leadership & Strategic Planning",
+    "Technology Advisory & Strategic Planning",
     "Dental/Medical Practice Management Solutions", 
     "AI Innovation & Responsible Governance",
-    "Partner Enablement & Strategic Alliances",
+    "Partner & Strategic Alliances",
     "Cybersecurity & Risk Management",
     "Cloud Infrastructure & Digital Transformation"
   ];
@@ -24,11 +25,11 @@ const About = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8 heading-enhanced">
-              About Momentum Edge & Mike Macri
+              About Momentum Edge
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
-              Extensive professional background in technology leadership, dental/medical practice management solutions, 
-              AI innovation, compliance, partner enablement, and comprehensive IT management with proven results. 
+              Extensive professional background in technology advisory, dental/medical practice management solutions, 
+              AI innovation, compliance, partner enablement, and comprehensive IT management with proven results that deliver solutions across industries and scale, taking into account the audience, value, and business benefits. 
               Guidance available as needed or proactively.
             </p>
           </div>
@@ -53,10 +54,10 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="animate-fade-in">
               <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 heading-enhanced">
-                Proven Technology Leadership
+                Proven Technology Advisory & Solutions
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
-                With over 25 years of experience in technology leadership and strategic consulting, 
+                With over 25 years of experience in technology advisory and strategic consulting, 
                 Mike Macri brings deep expertise across dental/medical practice management solutions, AI innovation, partner enablement, 
                 and comprehensive IT management solutions that deliver measurable results.
               </p>
