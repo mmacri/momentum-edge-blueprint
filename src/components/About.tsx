@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
@@ -66,27 +67,27 @@ const About = () => {
                 transformations while ensuring compliance and driving sustainable growth. Guidance available as needed or proactively.
               </p>
               <div className="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-100">
-                <h4 className="text-xl font-bold text-slate-900 mb-4">Education & Credentials</h4>
+                <h4 className="text-xl font-bold text-slate-900 mb-4">Professional Certifications</h4>
                 <ul className="space-y-2 text-gray-600">
                   <li className="flex items-center font-medium">
                     <span className="text-green-500 mr-2">•</span>
-                    Master's in Information Technology Management
+                    VMware Certified Professional
                   </li>
                   <li className="flex items-center font-medium">
                     <span className="text-green-500 mr-2">•</span>
-                    Certified Information Systems Security Professional (CISSP)
+                    AWS Certified
                   </li>
                   <li className="flex items-center font-medium">
                     <span className="text-green-500 mr-2">•</span>
-                    AWS Certified Solutions Architect
+                    Microsoft Certified
                   </li>
                   <li className="flex items-center font-medium">
                     <span className="text-green-500 mr-2">•</span>
-                    Healthcare IT Compliance Certification
+                    Google Certified
                   </li>
                   <li className="flex items-center font-medium">
                     <span className="text-green-500 mr-2">•</span>
-                    AI Ethics & Governance Specialization
+                    AI Ethics & Governance Certified
                   </li>
                 </ul>
               </div>
