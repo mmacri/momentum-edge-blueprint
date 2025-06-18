@@ -16,7 +16,7 @@ const Contact = () => {
       title: "Email Inquiry",
       description: "Send us your questions and detailed requirements for personalized solutions",
       action: "Send Email",
-      contact: "mike@momentumedgeconsulting.com"
+      contact: "momentumedgeconsulting@gmail.com"
     },
     {
       icon: "💼",
@@ -47,12 +47,12 @@ const Contact = () => {
               Let's discuss how strategic IT solutions and AI innovation can transform your business operations. 
               Schedule your complimentary consultation today and discover actionable strategies.
             </p>
-            <Button 
-              size="lg" 
-              className="primary-cta hover-scale"
+            <a 
+              href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
+              className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center"
             >
               Book Your Free Strategy Session
-            </Button>
+            </a>
           </div>
 
           {/* Contact Methods */}

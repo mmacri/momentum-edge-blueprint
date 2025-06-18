@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -68,9 +67,12 @@ const Header = () => {
               Contact
             </Link>
             
-            <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover-scale shadow-lg">
+            <a 
+              href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
+              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover-scale shadow-lg inline-flex items-center justify-center"
+            >
               Free Strategy Session
-            </Button>
+            </a>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -117,9 +119,12 @@ const Header = () => {
               <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
                 Contact
               </Link>
-              <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4">
+              <a 
+                href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4 text-center inline-block"
+              >
                 Free Strategy Session
-              </Button>
+              </a>
             </div>
           </div>
         )}
