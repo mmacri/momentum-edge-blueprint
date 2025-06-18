@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -15,6 +16,11 @@ const Header = () => {
     { name: "Strategic Go-To-Market", path: "/services#gtm" }
   ];
 
+  // Use relative path that works with Vite's asset handling
+  const logoPath = import.meta.env.PROD 
+    ? "/momentum-edge-blueprint/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png"
+    : "/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png";
+
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-6">
@@ -23,9 +29,17 @@ const Header = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-300">
               <img 
-                src="/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png" 
+                src={logoPath}
                 alt="Momentum Edge Consulting" 
                 className="h-32 w-80 md:h-36 md:w-96 lg:h-40 lg:w-[28rem] xl:h-44 xl:w-[32rem] object-contain"
+                onError={(e) => {
+                  console.error("Logo failed to load:", logoPath);
+                  // Fallback to text if image fails
+                  e.currentTarget.style.display = 'none';
+                  const fallback = document.createElement('div');
+                  fallback.innerHTML = '<h1 class="text-2xl font-bold text-green-600">Momentum Edge Consulting</h1>';
+                  e.currentTarget.parentNode?.appendChild(fallback);
+                }}
               />
             </Link>
           </div>
