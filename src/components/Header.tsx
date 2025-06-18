@@ -18,34 +18,34 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
+            <Link to="/" className="text-2xl font-bold text-primary hover:text-green-500 transition-colors duration-300">
               Momentum Edge Consulting
             </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
               Home
             </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
-              <Link to="/services" className="flex items-center text-gray-700 hover:text-primary transition-colors">
+              <Link to="/services" className="flex items-center text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
                 Services
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-300" />
               </Link>
-              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-100">
                 <div className="p-4">
                   {services.map((service, index) => (
                     <a
                       key={index}
                       href={service.path}
-                      className="block py-2 px-3 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded transition-colors"
+                      className="block py-3 px-4 text-sm text-gray-700 hover:text-green-500 hover:bg-green-50 rounded-md transition-all duration-300"
                     >
                       {service.name}
                     </a>
@@ -54,17 +54,17 @@ const Header = () => {
               </div>
             </div>
 
-            <Link to="/industries" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/industries" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
               Industries
             </Link>
-            <Link to="/about" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/about" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
               About
             </Link>
-            <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
               Contact
             </Link>
             
-            <Button className="bg-accent hover:bg-accent/90 text-white font-semibold">
+            <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-md transition-all duration-300 hover-scale">
               Free Strategy Session
             </Button>
           </nav>
@@ -84,33 +84,33 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden pb-4">
+          <div className="lg:hidden pb-6 animate-fade-in">
             <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
                 Home
               </Link>
               <div>
-                <Link to="/services" className="text-gray-900 font-semibold mb-2 block">Services</Link>
+                <Link to="/services" className="text-gray-900 font-semibold mb-3 block hover:text-green-500 transition-colors">Services</Link>
                 {services.map((service, index) => (
                   <a
                     key={index}
                     href={service.path}
-                    className="block py-1 pl-4 text-sm text-gray-600 hover:text-primary transition-colors"
+                    className="block py-2 pl-4 text-sm text-gray-600 hover:text-green-500 transition-colors duration-300"
                   >
                     {service.name}
                   </a>
                 ))}
               </div>
-              <Link to="/industries" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/industries" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
                 Industries
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/about" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
                 About
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium">
                 Contact
               </Link>
-              <Button className="bg-accent hover:bg-accent/90 text-white font-semibold w-full">
+              <Button className="bg-green-500 hover:bg-green-600 text-white font-semibold w-full py-3 rounded-md transition-all duration-300">
                 Free Strategy Session
               </Button>
             </div>

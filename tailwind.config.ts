@@ -26,7 +26,7 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#1e40af',
+					DEFAULT: '#102a43',
 					foreground: '#ffffff'
 				},
 				secondary: {
@@ -42,8 +42,12 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: '#3b82f6',
+					DEFAULT: '#4caf50',
 					foreground: '#ffffff'
+				},
+				green: {
+					500: '#4caf50',
+					600: '#388e3c'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -93,7 +97,7 @@ export default {
 				'fade-in': {
 					'0%': {
 						opacity: '0',
-						transform: 'translateY(10px)'
+						transform: 'translateY(20px)'
 					},
 					'100%': {
 						opacity: '1',

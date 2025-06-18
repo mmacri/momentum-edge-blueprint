@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-20 lg:py-32">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+    <section id="home" className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-24 lg:py-36">
+      <div className="container mx-auto px-6">
+        <div className="max-w-5xl mx-auto text-center animate-fade-in">
+          <h1 className="text-5xl lg:text-7xl font-bold mb-8 leading-tight heading-enhanced">
             Accelerate Your Business with 
-            <span className="text-blue-400 block mt-2">Strategic IT Solutions & AI Innovation</span>
+            <span className="text-green-500 block mt-4">Strategic IT Solutions & AI Innovation</span>
           </h1>
           
-          <p className="text-xl lg:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl lg:text-2xl mb-12 text-enhanced max-w-4xl mx-auto leading-relaxed">
             Robust, customized technology consulting services tailored to businesses of every size—from healthcare practices and small remote offices to enterprise clients.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
             <Button 
               size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 text-lg hover-scale"
+              className="primary-cta text-lg px-8 py-4 hover-scale"
             >
               Book Your Free Strategy Session
             </Button>
@@ -27,7 +27,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-4 text-lg"
+                className="secondary-cta text-lg px-8 py-4"
               >
                 Explore Our Services
               </Button>
@@ -35,7 +35,7 @@ const Hero = () => {
           </div>
 
           {/* Core Service Pillars */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
               "CIO & IT Advisory",
               "Healthcare IT",
@@ -46,9 +46,9 @@ const Hero = () => {
             ].map((service, index) => (
               <div 
                 key={index} 
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-4 hover:bg-white/20 transition-all duration-300 hover-scale"
+                className="service-tile group"
               >
-                <p className="font-semibold text-sm lg:text-base">{service}</p>
+                <p className="font-semibold text-lg text-white group-hover:text-green-400 transition-colors duration-300">{service}</p>
               </div>
             ))}
           </div>
