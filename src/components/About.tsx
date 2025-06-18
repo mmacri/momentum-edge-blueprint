@@ -1,12 +1,11 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const achievements = [
     { number: "25+", label: "Years of Technology Leadership" },
     { number: "1000's", label: "Successful IT Implementations" },
-    { number: "50+", label: "Dental/Medical Practices Supported" },
-    { number: "25+", label: "AI Projects Delivered" }
+    { number: "Dental & Medical", label: "Practice Management Solutions" },
+    { number: "Small to Medium", label: "Office Management Solutions" }
   ];
 
   const expertise = [
