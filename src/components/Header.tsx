@@ -22,8 +22,12 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-xl lg:text-2xl font-bold text-primary hover:text-green-500 transition-colors duration-300">
-              Momentum Edge Consulting
+            <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-300">
+              <img 
+                src="/lovable-uploads/ca0223ac-21cf-453e-aabf-f56e6ca95a25.png" 
+                alt="Momentum Edge Consulting" 
+                className="h-10 w-auto"
+              />
             </Link>
           </div>
 
