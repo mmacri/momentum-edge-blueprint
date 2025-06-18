@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -10,20 +9,6 @@ const Contact = () => {
       description: "Send us your questions and detailed requirements for personalized solutions. We respond same business day or next business day.",
       action: "Send Email",
       contact: "momentumedgeconsulting@gmail.com"
-    },
-    {
-      icon: "💼",
-      title: "LinkedIn Connect",
-      description: "Connect for professional networking and industry insights",
-      action: "Connect on LinkedIn",
-      contact: "linkedin.com/in/mikemacri"
-    },
-    {
-      icon: "📅",
-      title: "Calendly Booking",
-      description: "Book a comprehensive strategic consultation session",
-      action: "Schedule Meeting",
-      contact: "calendly.com/momentum-edge"
     }
   ];
 
@@ -49,7 +34,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Methods */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-1 gap-8 mb-16 max-w-md mx-auto">
             {contactMethods.map((method, index) => (
               <Card 
                 key={index} 
