@@ -8,12 +8,13 @@ const Hero = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto text-center animate-fade-in">
           <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold mb-8 leading-tight text-white">
-            Accelerate Your Business with 
-            <span className="text-green-400 block mt-4">Strategic IT Solutions & AI Innovation</span>
+            Your Strategic Technology Partner
+            <span className="text-green-400 block mt-4">From Virtual CIO Leadership to AI Innovation</span>
           </h1>
           
           <p className="text-lg lg:text-xl xl:text-2xl mb-12 text-gray-200 max-w-4xl mx-auto leading-relaxed font-medium">
-            Robust, customized technology consulting services tailored to businesses of every size—from healthcare practices and small remote offices to enterprise clients.
+            Comprehensive technology consulting and strategic IT leadership for businesses of every size. 
+            No long-term contracts. 100% vendor-neutral advice. Enterprise expertise with startup agility.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -34,32 +35,32 @@ const Hero = () => {
             </Link>
           </div>
 
-          {/* Core Service Pillars with Descriptions */}
+          {/* Enhanced Core Service Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
-                title: "CIO & IT Advisory",
-                description: "Strategic technology leadership for businesses ready to scale"
+                title: "Virtual CIO & IT Leadership",
+                description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost"
               },
               {
-                title: "Healthcare IT",
-                description: "HIPAA-compliant solutions for medical and dental practices"
+                title: "Healthcare IT Solutions",
+                description: "HIPAA-compliant technology management for medical and dental practices"
+              },
+              {
+                title: "Cybersecurity & Compliance",
+                description: "Virtual CISO services and compliance frameworks (HIPAA, SOC 2, NIST)"
               },
               {
                 title: "AI Solutions & Governance",
-                description: "Custom AI applications with responsible implementation frameworks"
+                description: "Responsible AI implementation with custom applications and governance frameworks"
               },
               {
-                title: "Partner Enablement",
-                description: "Revenue acceleration programs for technology partnerships"
+                title: "Cloud & Infrastructure",
+                description: "Complete cloud migrations, Office 365 implementations, and IT infrastructure optimization"
               },
               {
-                title: "Small Office IT",
-                description: "Complete IT solutions for small and remote offices"
-              },
-              {
-                title: "Strategic Go-To-Market",
-                description: "End-to-end GTM strategy for technology companies"
+                title: "Small Office IT Setup",
+                description: "New office setups, relocations, and complete IT solutions for small and remote offices"
               }
             ].map((service, index) => (
               <div 
@@ -76,14 +77,44 @@ const Hero = () => {
             ))}
           </div>
 
-          {/* Quick Navigation Hints */}
+          {/* Competitive Differentiators */}
+          <div className="mt-16 bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+            <h3 className="text-2xl font-bold text-white mb-6">Why Choose Momentum Edge?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                {
+                  title: "100% Vendor Neutral",
+                  description: "Objective advice with no product sales bias"
+                },
+                {
+                  title: "Flexible Engagements", 
+                  description: "Project-based or ongoing - no long-term contracts"
+                },
+                {
+                  title: "Enterprise Expertise",
+                  description: "Fortune 500 experience for businesses of all sizes"
+                },
+                {
+                  title: "AI & Innovation Ready",
+                  description: "Leading-edge technology guidance and governance"
+                }
+              ].map((differentiator, index) => (
+                <div key={index} className="text-center">
+                  <h4 className="font-semibold text-green-400 mb-2">{differentiator.title}</h4>
+                  <p className="text-sm text-gray-200">{differentiator.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Navigation */}
           <div className="mt-16 text-center">
             <p className="text-gray-300 text-lg mb-4">
-              Ready to transform your business technology?
+              Ready to accelerate your business with strategic technology leadership?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
               <Link to="/services" className="text-green-400 hover:text-green-300 transition-colors duration-300">
-                View Detailed Services →
+                View Complete Service Portfolio →
               </Link>
               <Link to="/industries" className="text-green-400 hover:text-green-300 transition-colors duration-300">
                 See Industries We Serve →
