@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -7,10 +8,24 @@ const Contact = () => {
       icon: "📧",
       title: "Email Inquiry",
       description: "Send us your questions and detailed requirements for personalized solutions. We respond same business day or next business day.",
-      action: "Send Email",
-      contact: "momentumedgeconsulting@gmail.com"
+      action: "Send Email"
     }
   ];
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const company = formData.get('company');
+    const interest = formData.get('interest');
+    const message = formData.get('message');
+    
+    const subject = `Inquiry from ${name} - ${company}`;
+    const body = `Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPrimary Interest: ${interest}\n\nMessage:\n${message}`;
+    
+    window.location.href = `mailto:momentumedgeconsulting@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <section id="contact" className="py-20 bg-white">
@@ -52,15 +67,12 @@ const Contact = () => {
                   <p className="text-gray-600 mb-4 text-sm font-medium leading-relaxed">
                     {method.description}
                   </p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full secondary-cta mb-3"
+                  <a 
+                    href="mailto:momentumedgeconsulting@gmail.com?subject=Business Inquiry"
+                    className="w-full secondary-cta inline-flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200"
                   >
                     {method.action}
-                  </Button>
-                  <p className="text-xs text-gray-500 font-mono bg-gray-50 p-2 rounded">
-                    {method.contact}
-                  </p>
+                  </a>
                 </CardContent>
               </Card>
             ))}
@@ -77,42 +89,55 @@ const Contact = () => {
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Your Name" 
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
+                  />
+                  <input 
+                    type="email" 
+                    name="email"
+                    placeholder="Email Address" 
+                    required
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
+                  />
+                </div>
                 <input 
                   type="text" 
-                  placeholder="Your Name" 
+                  name="company"
+                  placeholder="Company Name" 
                   className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
                 />
-                <input 
-                  type="email" 
-                  placeholder="Email Address" 
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
-                />
-              </div>
-              <input 
-                type="text" 
-                placeholder="Company Name" 
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 font-medium"
-              />
-              <select className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 text-gray-700 font-medium">
-                <option value="">Select Primary Interest</option>
-                <option value="cio">Outsourced CIO & IT Advisory</option>
-                <option value="healthcare">Healthcare IT Solutions</option>
-                <option value="ai">AI Solutions & Governance</option>
-                <option value="remote">Small Office & Remote IT</option>
-                <option value="partner">Partner Enablement</option>
-                <option value="gtm">Strategic Go-To-Market</option>
-              </select>
-              <textarea 
-                placeholder="Describe your technology challenges or strategic goals..." 
-                rows={4}
-                className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 resize-none font-medium"
-              ></textarea>
-              <Button 
-                className="w-full primary-cta"
-              >
-                Send Inquiry
-              </Button>
+                <select 
+                  name="interest"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 text-gray-700 font-medium"
+                >
+                  <option value="">Select Primary Interest</option>
+                  <option value="cio">Outsourced CIO & IT Advisory</option>
+                  <option value="healthcare">Healthcare IT Solutions</option>
+                  <option value="ai">AI Solutions & Governance</option>
+                  <option value="remote">Small Office & Remote IT</option>
+                  <option value="partner">Partner Enablement</option>
+                  <option value="gtm">Strategic Go-To-Market</option>
+                </select>
+                <textarea 
+                  name="message"
+                  placeholder="Describe your technology challenges or strategic goals..." 
+                  rows={4}
+                  required
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:outline-none focus:ring-2 focus:ring-green-500/20 resize-none font-medium"
+                ></textarea>
+                <Button 
+                  type="submit"
+                  className="w-full primary-cta"
+                >
+                  Send Inquiry
+                </Button>
+              </form>
             </CardContent>
           </Card>
         </div>
