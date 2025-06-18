@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Hospital, Building2, Home, Scale, Banknote, Settings } from "lucide-react";
 
 const Industries = () => {
   const industries = [
@@ -7,7 +8,8 @@ const Industries = () => {
       title: "Healthcare & Medical Practices",
       subtitle: "Dental practices, medical offices, clinics, and healthcare facilities",
       description: "Specialized IT solutions ensuring HIPAA compliance, patient data security, and seamless clinical workflows with proven results in healthcare technology.",
-      icon: "🏥",
+      icon: Hospital,
+      color: "text-red-500",
       highlights: ["HIPAA Compliance & Audits", "EHR/EMR Optimization", "Telehealth Solutions", "Patient Data Security"],
       cta: "Learn about our 20+ years of healthcare IT experience"
     },
@@ -15,7 +17,8 @@ const Industries = () => {
       title: "Small to Mid-Sized Businesses",
       subtitle: "Growing companies that need enterprise-level IT strategy",
       description: "Scalable technology infrastructure and strategic IT planning to support business growth, digital transformation, and competitive advantage.",
-      icon: "🏢", 
+      icon: Building2,
+      color: "text-blue-500",
       highlights: ["Virtual CIO Leadership", "Cloud Migration Strategy", "Cybersecurity Programs", "Technology Roadmaps"],
       cta: "Discover how we align IT with business goals"
     },
@@ -23,7 +26,8 @@ const Industries = () => {
       title: "Small & Remote Offices",
       subtitle: "Including home offices and distributed teams",
       description: "Comprehensive remote work solutions with secure connectivity, collaboration tools, office setups, and ongoing support for distributed teams.",
-      icon: "🏠",
+      icon: Home,
+      color: "text-orange-500",
       highlights: ["Office Setup & Relocation", "Secure Remote Access", "Collaboration Platforms", "Vendor Coordination"],
       cta: "Get your remote office technology right"
     },
@@ -31,7 +35,8 @@ const Industries = () => {
       title: "Professional Services",
       subtitle: "Law firms, accounting practices, consulting firms",
       description: "Technology solutions tailored for professional service firms, emphasizing security, compliance, client confidentiality, and productivity.",
-      icon: "⚖️",
+      icon: Scale,
+      color: "text-purple-500",
       highlights: ["Document Security", "Client Portal Solutions", "Compliance Management", "Productivity Tools"],
       cta: "Enhance your professional practice technology"
     },
@@ -39,7 +44,8 @@ const Industries = () => {
       title: "Financial Services",
       subtitle: "Banks, credit unions, financial advisors, and fintech",
       description: "Robust security frameworks and compliance solutions for financial organizations managing sensitive data and regulatory requirements.",
-      icon: "🏦",
+      icon: Banknote,
+      color: "text-green-500",
       highlights: ["Regulatory Compliance", "Data Protection", "Secure Communications", "Risk Management"],
       cta: "Secure your financial services technology"
     },
@@ -47,7 +53,8 @@ const Industries = () => {
       title: "Technology Companies",
       subtitle: "Software vendors, MSPs, and solution providers",
       description: "Strategic consulting for go-to-market strategies, partner enablement, technical solution development, and scaling technology businesses.",
-      icon: "⚙️",
+      icon: Settings,
+      color: "text-gray-500",
       highlights: ["Partner Program Development", "Go-to-Market Strategy", "Technical Enablement", "Channel Strategy"],
       cta: "Accelerate your technology business growth"
     }
@@ -74,47 +81,50 @@ const Industries = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {industries.map((industry, index) => (
-            <Card
-              key={index}
-              className="feature-card group h-full"
-            >
-              <CardHeader className="text-center pb-4">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {industry.icon}
-                </div>
-                <CardTitle className="text-xl text-slate-900 mb-3 font-semibold group-hover:text-green-500 transition-colors duration-300">
-                  {industry.title}
-                </CardTitle>
-                <CardDescription className="text-green-600 font-semibold mb-4">
-                  {industry.subtitle}
-                </CardDescription>
-                <p className="text-gray-600 font-medium leading-relaxed">
-                  {industry.description}
-                </p>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <div className="space-y-3 flex-1">
-                  {industry.highlights.map((highlight, highlightIndex) => (
-                    <div key={highlightIndex} className="flex items-center">
-                      <span className="text-green-500 mr-3 font-bold">•</span>
-                      <span className="text-sm font-semibold text-gray-700">{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Industry CTA */}
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <a 
-                    href="mailto:momentumedgeconsulting@gmail.com?subject=Industry-Specific Consultation Request&body=Hello, I would like to discuss technology solutions specific to my industry needs."
-                    className="text-green-600 hover:text-green-500 font-semibold text-sm transition-colors duration-300 group-hover:underline"
-                  >
-                    {industry.cta} →
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+          {industries.map((industry, index) => {
+            const IconComponent = industry.icon;
+            return (
+              <Card
+                key={index}
+                className="feature-card group h-full"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className={`${industry.color} mb-4 flex justify-center`}>
+                    <IconComponent size={48} className="group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <CardTitle className="text-xl text-slate-900 mb-3 font-semibold group-hover:text-green-500 transition-colors duration-300">
+                    {industry.title}
+                  </CardTitle>
+                  <CardDescription className="text-green-600 font-semibold mb-4">
+                    {industry.subtitle}
+                  </CardDescription>
+                  <p className="text-gray-600 font-medium leading-relaxed">
+                    {industry.description}
+                  </p>
+                </CardHeader>
+                <CardContent className="flex-1 flex flex-col">
+                  <div className="space-y-3 flex-1">
+                    {industry.highlights.map((highlight, highlightIndex) => (
+                      <div key={highlightIndex} className="flex items-center">
+                        <span className="text-green-500 mr-3 font-bold">•</span>
+                        <span className="text-sm font-semibold text-gray-700">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Industry CTA */}
+                  <div className="mt-6 pt-4 border-t border-gray-200">
+                    <a 
+                      href="mailto:momentumedgeconsulting@gmail.com?subject=Industry-Specific Consultation Request&body=Hello, I would like to discuss technology solutions specific to my industry needs."
+                      className="text-green-600 hover:text-green-500 font-semibold text-sm transition-colors duration-300 group-hover:underline"
+                    >
+                      {industry.cta} →
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* Industries CTA */}

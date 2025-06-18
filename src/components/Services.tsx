@@ -1,5 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Target, Shield, Hospital, Bot, Cloud, Building2, Handshake, BarChart3 } from "lucide-react";
 
 const Services = () => {
   const services = [
@@ -14,7 +15,8 @@ const Services = () => {
         "Vendor evaluation and negotiation support",
         "Executive reporting and board-level IT presentations"
       ],
-      icon: "🎯"
+      icon: Target,
+      color: "text-blue-500"
     },
     {
       id: "vciso", 
@@ -27,7 +29,8 @@ const Services = () => {
         "Incident response planning and management",
         "Security awareness training and governance"
       ],
-      icon: "🛡️"
+      icon: Shield,
+      color: "text-yellow-500"
     },
     {
       id: "healthcare",
@@ -40,7 +43,8 @@ const Services = () => {
         "Patient data security and privacy protection",
         "Telehealth infrastructure and secure communications"
       ],
-      icon: "🏥"
+      icon: Hospital,
+      color: "text-red-500"
     },
     {
       id: "ai",
@@ -53,7 +57,8 @@ const Services = () => {
         "Compliance with emerging AI regulations (EU AI Act, etc.)",
         "AI automation and workflow optimization"
       ],
-      icon: "🤖"
+      icon: Bot,
+      color: "text-purple-500"
     },
     {
       id: "cloud",
@@ -66,7 +71,8 @@ const Services = () => {
         "Backup and disaster recovery solutions",
         "Network design and security implementation"
       ],
-      icon: "☁️"
+      icon: Cloud,
+      color: "text-cyan-500"
     },
     {
       id: "small-office",
@@ -79,7 +85,8 @@ const Services = () => {
         "Vendor coordination (ISP, telecom, hardware providers)",
         "Ongoing IT support and helpdesk services"
       ],
-      icon: "🏢"
+      icon: Building2,
+      color: "text-orange-500"
     },
     {
       id: "partner",
@@ -92,7 +99,8 @@ const Services = () => {
         "Partner portal development and digital enablement",
         "Joint business planning and revenue acceleration"
       ],
-      icon: "🤝"
+      icon: Handshake,
+      color: "text-green-500"
     },
     {
       id: "projects",
@@ -105,7 +113,8 @@ const Services = () => {
         "Vendor evaluation and procurement advisory",
         "Project management and implementation oversight"
       ],
-      icon: "📊"
+      icon: BarChart3,
+      color: "text-indigo-500"
     }
   ];
 
@@ -130,35 +139,38 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={index} 
-              id={service.id}
-              className="feature-card group h-full"
-            >
-              <CardHeader className="text-center pb-4">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                  {service.icon}
-                </div>
-                <CardTitle className="text-xl text-slate-900 mb-3 font-semibold group-hover:text-green-500 transition-colors duration-300">
-                  {service.title}
-                </CardTitle>
-                <CardDescription className="text-gray-600 font-medium leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex-1">
-                <ul className="space-y-3">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-start">
-                      <span className="text-green-500 mr-3 mt-1 font-bold">✓</span>
-                      <span className="text-sm font-medium text-gray-700 leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <Card 
+                key={index} 
+                id={service.id}
+                className="feature-card group h-full"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className={`${service.color} mb-4 flex justify-center`}>
+                    <IconComponent size={48} className="group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <CardTitle className="text-xl text-slate-900 mb-3 font-semibold group-hover:text-green-500 transition-colors duration-300">
+                    {service.title}
+                  </CardTitle>
+                  <CardDescription className="text-gray-600 font-medium leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <ul className="space-y-3">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start">
+                        <span className="text-green-500 mr-3 mt-1 font-bold">✓</span>
+                        <span className="text-sm font-medium text-gray-700 leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         {/* CTA Section */}

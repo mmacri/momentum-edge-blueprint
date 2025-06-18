@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { Target, Shield, Hospital, Bot, Cloud, Building2 } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -35,46 +36,64 @@ const Hero = () => {
             </Link>
           </div>
 
-          {/* Enhanced Core Service Pillars */}
+          {/* Enhanced Core Service Pillars with Custom Icons */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 title: "Virtual CIO & IT Leadership",
-                description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost"
+                description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost",
+                icon: Target,
+                color: "text-blue-400"
               },
               {
                 title: "Healthcare IT Solutions",
-                description: "HIPAA-compliant technology management for medical and dental practices"
+                description: "HIPAA-compliant technology management for medical and dental practices",
+                icon: Hospital,
+                color: "text-red-400"
               },
               {
                 title: "Cybersecurity & Compliance",
-                description: "Virtual CISO services and compliance frameworks (HIPAA, SOC 2, NIST)"
+                description: "Virtual CISO services and compliance frameworks (HIPAA, SOC 2, NIST)",
+                icon: Shield,
+                color: "text-yellow-400"
               },
               {
                 title: "AI Solutions & Governance",
-                description: "Responsible AI implementation with custom applications and governance frameworks"
+                description: "Responsible AI implementation with custom applications and governance frameworks",
+                icon: Bot,
+                color: "text-purple-400"
               },
               {
                 title: "Cloud & Infrastructure",
-                description: "Complete cloud migrations, Office 365 implementations, and IT infrastructure optimization"
+                description: "Complete cloud migrations, Office 365 implementations, and IT infrastructure optimization",
+                icon: Cloud,
+                color: "text-cyan-400"
               },
               {
                 title: "Small Office IT Setup",
-                description: "New office setups, relocations, and complete IT solutions for small and remote offices"
+                description: "New office setups, relocations, and complete IT solutions for small and remote offices",
+                icon: Building2,
+                color: "text-orange-400"
               }
-            ].map((service, index) => (
-              <div 
-                key={index} 
-                className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 group cursor-pointer"
-              >
-                <h3 className="font-semibold text-lg text-slate-900 group-hover:text-green-600 transition-colors duration-300 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
+            ].map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <div 
+                  key={index} 
+                  className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 group cursor-pointer"
+                >
+                  <div className={`${service.color} mb-4 flex justify-center`}>
+                    <IconComponent size={48} className="group-hover:scale-110 transition-transform duration-300" />
+                  </div>
+                  <h3 className="font-semibold text-lg text-slate-900 group-hover:text-green-600 transition-colors duration-300 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           {/* Competitive Differentiators */}
