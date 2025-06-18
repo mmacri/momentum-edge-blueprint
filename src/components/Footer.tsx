@@ -1,4 +1,3 @@
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -20,7 +19,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-white py-16">
+    <footer className="bg-slate-900 text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company Info */}
@@ -43,8 +42,8 @@ const Footer = () => {
               {services.map((service, index) => (
                 <li key={index}>
                   <a 
-                    href={`#service-${index}`} 
-                    className="text-white/80 hover:text-accent transition-colors text-sm"
+                    href={`/services#service-${index}`} 
+                    className="text-white/80 hover:text-blue-400 transition-colors text-sm"
                   >
                     {service}
                   </a>
@@ -60,8 +59,8 @@ const Footer = () => {
               {industries.map((industry, index) => (
                 <li key={index}>
                   <a 
-                    href="#industries" 
-                    className="text-white/80 hover:text-accent transition-colors text-sm"
+                    href="/industries" 
+                    className="text-white/80 hover:text-blue-400 transition-colors text-sm"
                   >
                     {industry}
                   </a>
@@ -75,27 +74,27 @@ const Footer = () => {
             <h4 className="text-xl font-bold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-white/80 hover:text-accent transition-colors">
+                <a href="/" className="text-white/80 hover:text-blue-400 transition-colors">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#services" className="text-white/80 hover:text-accent transition-colors">
+                <a href="/services" className="text-white/80 hover:text-blue-400 transition-colors">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#industries" className="text-white/80 hover:text-accent transition-colors">
+                <a href="/industries" className="text-white/80 hover:text-blue-400 transition-colors">
                   Industries
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-white/80 hover:text-accent transition-colors">
+                <a href="/about" className="text-white/80 hover:text-blue-400 transition-colors">
                   About
                 </a>
               </li>
               <li>
-                <a href="#contact" className="text-white/80 hover:text-accent transition-colors">
+                <a href="/contact" className="text-white/80 hover:text-blue-400 transition-colors">
                   Contact
                 </a>
               </li>

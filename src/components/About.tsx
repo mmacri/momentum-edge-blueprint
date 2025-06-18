@@ -19,12 +19,12 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
               About Momentum Edge & Mike Macri
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -36,9 +36,9 @@ const About = () => {
           {/* Achievement Stats */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {achievements.map((achievement, index) => (
-              <Card key={index} className="text-center bg-white border-0 shadow-lg hover-scale">
+              <Card key={index} className="text-center bg-gray-50 border-0 shadow-lg hover-scale">
                 <CardContent className="p-6">
-                  <div className="text-3xl lg:text-4xl font-bold text-accent mb-2">
+                  <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2">
                     {achievement.number}
                   </div>
                   <div className="text-gray-600 font-medium">
@@ -52,7 +52,7 @@ const About = () => {
           {/* Main Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h3 className="text-3xl font-bold text-primary mb-6">
+              <h3 className="text-3xl font-bold text-slate-900 mb-6">
                 Proven Technology Leadership
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed">
@@ -65,8 +65,8 @@ const About = () => {
                 frameworks, Mike has successfully guided organizations through complex technology 
                 transformations while ensuring compliance and driving sustainable growth.
               </p>
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="text-xl font-bold text-primary mb-4">Education & Credentials</h4>
+              <div className="bg-gray-50 p-6 rounded-lg shadow-lg border">
+                <h4 className="text-xl font-bold text-slate-900 mb-4">Education & Credentials</h4>
                 <ul className="space-y-2 text-gray-600">
                   <li>• Master's in Information Technology Management</li>
                   <li>• Certified Information Systems Security Professional (CISSP)</li>
@@ -78,28 +78,28 @@ const About = () => {
             </div>
 
             <div className="animate-scale-in">
-              <h3 className="text-3xl font-bold text-primary mb-6">
+              <h3 className="text-3xl font-bold text-slate-900 mb-6">
                 Core Expertise Areas
               </h3>
               <div className="space-y-4">
                 {expertise.map((area, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+                    className="flex items-center bg-gray-50 p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow border"
                   >
-                    <span className="text-accent mr-4 text-xl">✓</span>
+                    <span className="text-blue-600 mr-4 text-xl">✓</span>
                     <span className="font-medium text-gray-700">{area}</span>
                   </div>
                 ))}
               </div>
               
-              <div className="mt-8 bg-primary text-white p-6 rounded-lg">
+              <div className="mt-8 bg-slate-900 text-white p-6 rounded-lg">
                 <h4 className="text-xl font-bold mb-3">Industry Recognition</h4>
                 <p className="text-white/90">
                   "Mike's strategic approach to technology implementation and partner enablement 
                   has consistently delivered measurable results across diverse industry verticals."
                 </p>
-                <p className="text-accent font-semibold mt-2">
+                <p className="text-blue-400 font-semibold mt-2">
                   - Technology Leadership Awards 2023
                 </p>
               </div>

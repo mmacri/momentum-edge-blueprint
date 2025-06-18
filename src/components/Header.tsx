@@ -2,17 +2,18 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const services = [
-    "Outsourced CIO & IT Advisory",
-    "Healthcare IT Solutions", 
-    "AI Solutions & Governance",
-    "Small Office & Remote IT",
-    "Partner Enablement",
-    "Strategic Go-To-Market"
+    { name: "Outsourced CIO & IT Advisory", path: "/services#cio" },
+    { name: "Healthcare IT Solutions", path: "/services#healthcare" }, 
+    { name: "AI Solutions & Governance", path: "/services#ai" },
+    { name: "Small Office & Remote IT", path: "/services#small-office" },
+    { name: "Partner Enablement", path: "/services#partner" },
+    { name: "Strategic Go-To-Market", path: "/services#gtm" }
   ];
 
   return (
@@ -21,47 +22,47 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-primary">
+            <Link to="/" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
               Momentum Edge Consulting
-            </h1>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
               Home
-            </a>
+            </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="flex items-center text-gray-700 hover:text-primary transition-colors">
+              <Link to="/services" className="flex items-center text-gray-700 hover:text-primary transition-colors">
                 Services
                 <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+              </Link>
               <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                 <div className="p-4">
                   {services.map((service, index) => (
                     <a
                       key={index}
-                      href={`#service-${index}`}
+                      href={service.path}
                       className="block py-2 px-3 text-sm text-gray-700 hover:text-primary hover:bg-gray-50 rounded transition-colors"
                     >
-                      {service}
+                      {service.name}
                     </a>
                   ))}
                 </div>
               </div>
             </div>
 
-            <a href="#industries" className="text-gray-700 hover:text-primary transition-colors">
+            <Link to="/industries" className="text-gray-700 hover:text-primary transition-colors">
               Industries
-            </a>
-            <a href="#about" className="text-gray-700 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/about" className="text-gray-700 hover:text-primary transition-colors">
               About
-            </a>
-            <a href="#contact" className="text-gray-700 hover:text-primary transition-colors">
+            </Link>
+            <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors">
               Contact
-            </a>
+            </Link>
             
             <Button className="bg-accent hover:bg-accent/90 text-white font-semibold">
               Free Strategy Session
@@ -85,30 +86,30 @@ const Header = () => {
         {isMenuOpen && (
           <div className="lg:hidden pb-4">
             <div className="flex flex-col space-y-4">
-              <a href="#home" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/" className="text-gray-700 hover:text-primary transition-colors">
                 Home
-              </a>
+              </Link>
               <div>
-                <p className="text-gray-900 font-semibold mb-2">Services</p>
+                <Link to="/services" className="text-gray-900 font-semibold mb-2 block">Services</Link>
                 {services.map((service, index) => (
                   <a
                     key={index}
-                    href={`#service-${index}`}
+                    href={service.path}
                     className="block py-1 pl-4 text-sm text-gray-600 hover:text-primary transition-colors"
                   >
-                    {service}
+                    {service.name}
                   </a>
                 ))}
               </div>
-              <a href="#industries" className="text-gray-700 hover:text-primary transition-colors">
+              <Link to="/industries" className="text-gray-700 hover:text-primary transition-colors">
                 Industries
-              </a>
-              <a href="#about" className="text-gray-700 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/about" className="text-gray-700 hover:text-primary transition-colors">
                 About
-              </a>
-              <a href="#contact" className="text-gray-700 hover:text-primary transition-colors">
+              </Link>
+              <Link to="/contact" className="text-gray-700 hover:text-primary transition-colors">
                 Contact
-              </a>
+              </Link>
               <Button className="bg-accent hover:bg-accent/90 text-white font-semibold w-full">
                 Free Strategy Session
               </Button>

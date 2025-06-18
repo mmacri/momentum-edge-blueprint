@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const Services = () => {
   const services = [
     {
+      id: "cio",
       title: "Outsourced CIO & IT Advisory",
       description: "Strategic technology leadership and roadmap planning for businesses ready to scale their IT infrastructure.",
       features: [
@@ -16,6 +17,7 @@ const Services = () => {
       icon: "🎯"
     },
     {
+      id: "healthcare",
       title: "Healthcare IT Solutions",
       description: "Specialized technology management for dental practices, medical offices, and healthcare facilities.",
       features: [
@@ -28,6 +30,7 @@ const Services = () => {
       icon: "🏥"
     },
     {
+      id: "ai",
       title: "AI Solutions, Applications & Governance",
       description: "Custom AI-driven solutions with responsible governance frameworks for sustainable business growth.",
       features: [
@@ -40,6 +43,7 @@ const Services = () => {
       icon: "🤖"
     },
     {
+      id: "small-office",
       title: "Small Office & Remote Office IT",
       description: "Comprehensive IT solutions designed specifically for small and remote office environments.",
       features: [
@@ -52,6 +56,7 @@ const Services = () => {
       icon: "🏢"
     },
     {
+      id: "partner",
       title: "Partner Enablement & Strategic Alliances",
       description: "Accelerate partner success with structured enablement programs and strategic alliance frameworks.",
       features: [
@@ -64,6 +69,7 @@ const Services = () => {
       icon: "🤝"
     },
     {
+      id: "gtm",
       title: "Strategic Go-To-Market & Solution Consulting",
       description: "End-to-end GTM strategy development and execution for technology companies and solution providers.",
       features: [
@@ -78,10 +84,10 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Comprehensive Technology Solutions
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -94,11 +100,12 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="hover:shadow-xl transition-all duration-300 hover-scale bg-white border-0 shadow-lg"
+              id={service.id}
+              className="hover:shadow-xl transition-all duration-300 hover-scale bg-white border shadow-lg"
             >
               <CardHeader className="text-center pb-4">
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <CardTitle className="text-xl text-primary mb-2">
+                <CardTitle className="text-xl text-slate-900 mb-2">
                   {service.title}
                 </CardTitle>
                 <CardDescription className="text-gray-600">
@@ -109,7 +116,7 @@ const Services = () => {
                 <ul className="space-y-2">
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-start">
-                      <span className="text-accent mr-2 mt-1">✓</span>
+                      <span className="text-blue-600 mr-2 mt-1">✓</span>
                       <span className="text-sm text-gray-700">{feature}</span>
                     </li>
                   ))}

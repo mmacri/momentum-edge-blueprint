@@ -39,10 +39,10 @@ const Industries = () => {
   ];
 
   return (
-    <section id="industries" className="py-20 bg-white">
+    <section id="industries" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-primary mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
             Industries We Serve
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -55,13 +55,13 @@ const Industries = () => {
           {industries.map((industry, index) => (
             <div 
               key={index}
-              className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover-scale"
+              className="bg-white rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover-scale border"
             >
               <div className="text-4xl mb-4">{industry.icon}</div>
-              <h3 className="text-2xl font-bold text-primary mb-2">
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">
                 {industry.title}
               </h3>
-              <p className="text-accent font-semibold mb-4">
+              <p className="text-blue-600 font-semibold mb-4">
                 {industry.subtitle}
               </p>
               <p className="text-gray-600 mb-6">
@@ -70,7 +70,7 @@ const Industries = () => {
               <div className="space-y-2">
                 {industry.highlights.map((highlight, highlightIndex) => (
                   <div key={highlightIndex} className="flex items-center">
-                    <span className="text-accent mr-2">•</span>
+                    <span className="text-blue-600 mr-2">•</span>
                     <span className="text-sm font-medium text-gray-700">{highlight}</span>
                   </div>
                 ))}
