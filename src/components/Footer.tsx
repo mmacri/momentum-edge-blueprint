@@ -5,6 +5,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const services = [
+    { name: "All Services", path: "/services" },
+    { name: "Areas of Expertise", path: "/expertise" },
     { name: "Outsourced CIO & IT Advisory", path: "/services#cio" },
     { name: "Healthcare IT Solutions", path: "/services#healthcare" },
     { name: "AI Solutions & Governance", path: "/services#ai" },
