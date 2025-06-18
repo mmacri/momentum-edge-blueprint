@@ -27,32 +27,71 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300"
+                className="border-2 border-green-400 bg-green-500 text-white hover:bg-green-600 hover:border-green-500 font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300"
               >
                 Explore Our Services
               </Button>
             </Link>
           </div>
 
-          {/* Core Service Pillars */}
+          {/* Core Service Pillars with Descriptions */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              "CIO & IT Advisory",
-              "Healthcare IT",
-              "AI Solutions & Governance",
-              "Partner Enablement",
-              "Small Office IT",
-              "Strategic Go-To-Market"
+              {
+                title: "CIO & IT Advisory",
+                description: "Strategic technology leadership for businesses ready to scale"
+              },
+              {
+                title: "Healthcare IT",
+                description: "HIPAA-compliant solutions for medical and dental practices"
+              },
+              {
+                title: "AI Solutions & Governance",
+                description: "Custom AI applications with responsible implementation frameworks"
+              },
+              {
+                title: "Partner Enablement",
+                description: "Revenue acceleration programs for technology partnerships"
+              },
+              {
+                title: "Small Office IT",
+                description: "Complete IT solutions for small and remote offices"
+              },
+              {
+                title: "Strategic Go-To-Market",
+                description: "End-to-end GTM strategy for technology companies"
+              }
             ].map((service, index) => (
               <div 
                 key={index} 
                 className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-200 group cursor-pointer"
               >
-                <p className="font-semibold text-lg text-slate-900 group-hover:text-green-600 transition-colors duration-300">
-                  {service}
+                <h3 className="font-semibold text-lg text-slate-900 group-hover:text-green-600 transition-colors duration-300 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {service.description}
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Quick Navigation Hints */}
+          <div className="mt-16 text-center">
+            <p className="text-gray-300 text-lg mb-4">
+              Ready to transform your business technology?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+              <Link to="/services" className="text-green-400 hover:text-green-300 transition-colors duration-300">
+                View Detailed Services →
+              </Link>
+              <Link to="/industries" className="text-green-400 hover:text-green-300 transition-colors duration-300">
+                See Industries We Serve →
+              </Link>
+              <Link to="/contact" className="text-green-400 hover:text-green-300 transition-colors duration-300">
+                Schedule Free Consultation →
+              </Link>
+            </div>
           </div>
         </div>
       </div>
