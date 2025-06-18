@@ -14,24 +14,30 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename={import.meta.env.PROD ? "/momentum-edge-blueprint" : ""}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/expertise" element={<ExpertisePage />} />
-          <Route path="/industries" element={<IndustriesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  console.log("App component rendering...");
+  console.log("Environment:", import.meta.env.MODE);
+  console.log("Base URL:", import.meta.env.BASE_URL);
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={import.meta.env.PROD ? "/momentum-edge-blueprint" : ""}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/expertise" element={<ExpertisePage />} />
+            <Route path="/industries" element={<IndustriesPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
