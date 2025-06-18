@@ -26,7 +26,7 @@ const Header = () => {
               <img 
                 src="/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png" 
                 alt="Momentum Edge Consulting" 
-                className="h-20 w-auto lg:h-24 xl:h-28"
+                className="h-20 w-48 lg:h-24 lg:w-56 xl:h-28 xl:w-64 object-contain"
               />
             </Link>
           </div>
