@@ -1,17 +1,16 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const achievements = [
-    { number: "15+", label: "Years of Technology Leadership" },
-    { number: "100+", label: "Successful IT Implementations" },
+    { number: "25+", label: "Years of Technology Leadership" },
+    { number: "1000's", label: "Successful IT Implementations" },
     { number: "50+", label: "Healthcare Practices Supported" },
     { number: "25+", label: "AI Projects Delivered" }
   ];
 
   const expertise = [
     "Technology Leadership & Strategic Planning",
-    "Healthcare IT & HIPAA Compliance", 
+    "Dental/Medical Software Management Solutions", 
     "AI Innovation & Responsible Governance",
     "Partner Enablement & Strategic Alliances",
     "Cybersecurity & Risk Management",
@@ -28,8 +27,9 @@ const About = () => {
               About Momentum Edge & Mike Macri
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
-              Extensive professional background in technology leadership, healthcare IT, 
-              AI innovation, compliance, partner enablement, and comprehensive IT management with proven results.
+              Extensive professional background in technology leadership, dental/medical software management, 
+              AI innovation, compliance, partner enablement, and comprehensive IT management with proven results. 
+              Guidance available as needed or proactively.
             </p>
           </div>
 
@@ -56,14 +56,14 @@ const About = () => {
                 Proven Technology Leadership
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
-                With over 15 years of experience in technology leadership and strategic consulting, 
-                Mike Macri brings deep expertise across healthcare IT, AI innovation, partner enablement, 
+                With over 25 years of experience in technology leadership and strategic consulting, 
+                Mike Macri brings deep expertise across dental/medical software management, AI innovation, partner enablement, 
                 and comprehensive IT management solutions that deliver measurable results.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
                 From architecting HIPAA-compliant healthcare solutions to developing AI governance 
                 frameworks, Mike has successfully guided organizations through complex technology 
-                transformations while ensuring compliance and driving sustainable growth.
+                transformations while ensuring compliance and driving sustainable growth. Guidance available as needed or proactively.
               </p>
               <div className="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-100">
                 <h4 className="text-xl font-bold text-slate-900 mb-4">Education & Credentials</h4>
