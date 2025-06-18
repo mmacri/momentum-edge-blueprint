@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/momentum-edge-blueprint/",
+  base: mode === 'production' ? "/momentum-edge-blueprint/" : "/",
   server: {
     host: "::",
     port: 8080,
