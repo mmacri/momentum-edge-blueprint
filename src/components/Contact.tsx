@@ -5,16 +5,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const Contact = () => {
   const contactMethods = [
     {
-      icon: "📞",
-      title: "Phone Consultation",
-      description: "Schedule a direct call to discuss your technology needs and challenges",
-      action: "Call Now",
-      contact: "(555) 123-4567"
-    },
-    {
       icon: "📧",
       title: "Email Inquiry",
-      description: "Send us your questions and detailed requirements for personalized solutions",
+      description: "Send us your questions and detailed requirements for personalized solutions. We respond same business day or next business day.",
       action: "Send Email",
       contact: "momentumedgeconsulting@gmail.com"
     },
@@ -45,18 +38,18 @@ const Contact = () => {
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed font-medium">
               Let's discuss how strategic IT solutions and AI innovation can transform your business operations. 
-              Schedule your complimentary consultation today and discover actionable strategies.
+              Email us your questions and we'll respond same business day or next business day with actionable strategies.
             </p>
             <a 
               href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
               className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-10 py-5 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center"
             >
-              Book Your Free Strategy Session
+              Email Us for Your Free Strategy Session
             </a>
           </div>
 
           {/* Contact Methods */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {contactMethods.map((method, index) => (
               <Card 
                 key={index} 
@@ -95,7 +88,7 @@ const Contact = () => {
                 Quick Inquiry Form
               </CardTitle>
               <p className="text-gray-600 font-medium">
-                Tell us about your technology challenges and strategic goals
+                Tell us about your technology challenges and strategic goals. We'll respond same business day or next business day.
               </p>
             </CardHeader>
             <CardContent className="space-y-4">
