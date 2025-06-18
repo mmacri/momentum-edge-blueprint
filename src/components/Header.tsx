@@ -19,14 +19,14 @@ const Header = () => {
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-6">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-300">
               <img 
                 src="/lovable-uploads/ca0223ac-21cf-453e-aabf-f56e6ca95a25.png" 
                 alt="Momentum Edge Consulting" 
-                className="h-32 w-auto lg:h-40"
+                className="h-20 w-auto lg:h-24"
               />
             </Link>
           </div>
