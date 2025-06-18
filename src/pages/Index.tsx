@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { Target, Shield, Hospital, Bot, CheckCircle, Star } from "lucide-react";
 
 const Index = () => {
+  console.log("Index component rendering...");
+
   const highlights = [
     {
       title: "Virtual CIO Leadership",
@@ -57,6 +59,8 @@ const Index = () => {
     { number: "24/7", label: "Support & Monitoring" }
   ];
 
+  console.log("Rendering Index with stats:", keyStats.length);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -75,19 +79,22 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-            {keyStats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>
-                <div className="text-sm lg:text-base text-gray-600 font-medium">{stat.label}</div>
-              </div>
-            ))}
+            {keyStats.map((stat, index) => {
+              console.log("Rendering stat:", stat, "at index:", index);
+              return (
+                <div key={`stat-${index}`} className="text-center">
+                  <div className="text-3xl lg:text-4xl font-bold text-green-600 mb-2">{stat.number}</div>
+                  <div className="text-sm lg:text-base text-gray-600 font-medium">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {highlights.map((highlight, index) => {
               const IconComponent = highlight.icon;
               return (
-                <Card key={index} className="feature-card group cursor-pointer h-full">
+                <Card key={`highlight-${index}`} className="feature-card group cursor-pointer h-full">
                   <CardHeader className="pb-4 text-center">
                     <div className={`${highlight.color} mb-4 flex justify-center`}>
                       <IconComponent size={48} className="group-hover:scale-110 transition-transform duration-300" />
@@ -110,10 +117,10 @@ const Index = () => {
             <h3 className="text-2xl font-bold text-center text-slate-900 mb-8">What Our Clients Say</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {testimonials.map((testimonial, index) => (
-                <div key={index} className="text-center">
+                <div key={`testimonial-${index}`} className="text-center">
                   <div className="flex justify-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={20} className="text-yellow-400 fill-current" />
+                      <Star key={`star-${index}-${i}`} size={20} className="text-yellow-400 fill-current" />
                     ))}
                   </div>
                   <div className="text-4xl text-green-500 mb-4">"</div>
