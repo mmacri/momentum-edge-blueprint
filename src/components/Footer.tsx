@@ -31,17 +31,6 @@ const Footer = () => {
             <p className="text-gray-300 mb-6 leading-relaxed font-medium">
               Strategic IT solutions and AI innovation for businesses of every size.
             </p>
-            <div className="space-y-3 text-gray-300">
-              <p className="flex items-center font-medium">
-                <span className="mr-2">📞</span> (555) 123-4567
-              </p>
-              <p className="flex items-center font-medium">
-                <span className="mr-2">📧</span> mike@momentumedgeconsulting.com
-              </p>
-              <p className="flex items-center font-medium">
-                <span className="mr-2">💼</span> linkedin.com/in/mikemacri
-              </p>
-            </div>
           </div>
 
           {/* Services */}
