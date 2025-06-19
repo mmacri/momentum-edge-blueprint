@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Target, Shield, Cloud, Cog, Users, BarChart3, Brain, HeartHandshake } from "lucide-react";
 
@@ -126,7 +125,7 @@ const Expertise = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8 heading-enhanced">
-              Deep Technical Expertise Across All Technology Domains
+              Deep Technical Expertise Across Technology Domains
             </h2>
             <p className="text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
               25+ years of hands-on experience delivering strategic technology solutions across healthcare, 
