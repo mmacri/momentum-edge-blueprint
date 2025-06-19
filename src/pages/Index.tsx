@@ -6,64 +6,75 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Target, Shield, Hospital, Bot, CheckCircle, Star } from "lucide-react";
+import { ErrorBoundary } from "react-error-boundary";
+
+const PageErrorFallback = ({ error }: { error: Error }) => {
+  console.error("Index page error:", error);
+  return (
+    <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-red-600 mb-4">Page Error</h1>
+        <p className="text-gray-600">Please refresh the page</p>
+      </div>
+    </div>
+  );
+};
 
 const Index = () => {
   console.log("Index component starting to render...");
   console.log("Current location:", window.location.href);
   
-  try {
-    const highlights = [
-      {
-        title: "Virtual CIO Strategy",
-        description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost",
-        icon: Target,
-        color: "text-blue-500"
-      },
-      {
-        title: "Cybersecurity & Compliance",
-        description: "Virtual CISO services and compliance frameworks with proven expertise in regulated industries",
-        icon: Shield,
-        color: "text-yellow-500"
-      },
-      {
-        title: "Healthcare IT Specialists", 
-        description: "HIPAA-compliant solutions for dental and medical practices with 20+ years of healthcare experience",
-        icon: Hospital,
-        color: "text-red-500"
-      },
-      {
-        title: "AI Solutions & Guidance",
-        description: "Responsible AI implementation with custom applications and governance frameworks for emerging regulations",
-        icon: Bot,
-        color: "text-purple-500"
-      }
-    ];
+  const highlights = [
+    {
+      title: "Virtual CIO Strategy",
+      description: "Strategic technology roadmaps and executive-level IT guidance without the full-time cost",
+      icon: Target,
+      color: "text-blue-500"
+    },
+    {
+      title: "Cybersecurity & Compliance",
+      description: "Virtual CISO services and compliance frameworks with proven expertise in regulated industries",
+      icon: Shield,
+      color: "text-yellow-500"
+    },
+    {
+      title: "Healthcare IT Specialists", 
+      description: "HIPAA-compliant solutions for dental and medical practices with 20+ years of healthcare experience",
+      icon: Hospital,
+      color: "text-red-500"
+    },
+    {
+      title: "AI Solutions & Guidance",
+      description: "Responsible AI implementation with custom applications and governance frameworks for emerging regulations",
+      icon: Bot,
+      color: "text-purple-500"
+    }
+  ];
 
-    const testimonials = [
-      {
-        quote: "Momentum Edge transformed our technology strategy. Their vendor-neutral approach saved us significant costs while improving our security posture.",
-        author: "Healthcare Practice Administrator",
-        industry: "Healthcare",
-        rating: 5
-      },
-      {
-        quote: "Finally, a technology partner that understands business strategy, not just technical implementation. Their Virtual CIO service has been game-changing.",
-        author: "Small Business Owner", 
-        industry: "Professional Services",
-        rating: 5
-      }
-    ];
+  const testimonials = [
+    {
+      quote: "Momentum Edge transformed our technology strategy. Their vendor-neutral approach saved us significant costs while improving our security posture.",
+      author: "Healthcare Practice Administrator",
+      industry: "Healthcare",
+      rating: 5
+    },
+    {
+      quote: "Finally, a technology partner that understands business strategy, not just technical implementation. Their Virtual CIO service has been game-changing.",
+      author: "Small Business Owner", 
+      industry: "Professional Services",
+      rating: 5
+    }
+  ];
 
-    const keyStats = [
-      { number: "20+", label: "Years Healthcare IT Experience" },
-      { number: "100%", label: "Vendor Neutral Approach" }
-    ];
+  const keyStats = [
+    { number: "20+", label: "Years Healthcare IT Experience" },
+    { number: "100%", label: "Vendor Neutral Approach" }
+  ];
 
-    console.log("Index data initialized successfully");
-    console.log("Highlights count:", highlights.length);
-    console.log("Stats count:", keyStats.length);
+  console.log("Index data initialized successfully");
 
-    return (
+  return (
+    <ErrorBoundary FallbackComponent={PageErrorFallback}>
       <div className="min-h-screen bg-white">
         <Header />
         <Hero />
@@ -151,18 +162,8 @@ const Index = () => {
 
         <Footer />
       </div>
-    );
-  } catch (error) {
-    console.error("Error in Index component:", error);
-    return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-red-600 mb-4">Something went wrong</h1>
-          <p className="text-gray-600">Please refresh the page</p>
-        </div>
-      </div>
-    );
-  }
+    </ErrorBoundary>
+  );
 };
 
 export default Index;
