@@ -48,13 +48,20 @@ const App = () => {
   console.log("Base URL:", import.meta.env.BASE_URL);
   console.log("Production:", import.meta.env.PROD);
   
+  // Determine basename for GitHub Pages vs custom domain
+  const isGitHubPages = window.location.hostname.includes('github.io');
+  const basename = isGitHubPages ? "/momentum-edge-blueprint" : undefined;
+  
+  console.log("Is GitHub Pages:", isGitHubPages);
+  console.log("Router basename:", basename);
+  
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} onError={(error) => console.error("Error boundary caught:", error)}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter basename={basename}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<ServicesPage />} />
