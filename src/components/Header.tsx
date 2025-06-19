@@ -18,10 +18,8 @@ const Header = () => {
     { name: "Strategic Go-To-Market", path: "/services#gtm" }
   ];
 
-  // Use relative path that works with Vite's asset handling
-  const logoPath = import.meta.env.PROD 
-    ? "/momentum-edge-blueprint/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png"
-    : "/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png";
+  // Use the correct path for custom domain
+  const logoPath = "/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png";
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
