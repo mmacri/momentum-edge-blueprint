@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle } from "lucide-react";
@@ -18,7 +17,7 @@ const Hero = () => {
               </h1>
               <p className="text-xl lg:text-2xl text-gray-100 mb-8 leading-relaxed font-medium">
                 Get Fortune 500-level technology leadership without the full-time cost. 
-                Expert CIO advisory, healthcare IT, and AI governance solutions.
+                Expert CIO advisory, IT across Industries, workplace IT Solutions, and AI to meet your needs.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
