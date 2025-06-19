@@ -47,9 +47,10 @@ const App = () => {
   console.log("Environment:", import.meta.env.MODE);
   console.log("Base URL:", import.meta.env.BASE_URL);
   console.log("Production:", import.meta.env.PROD);
+  console.log("Current hostname:", window.location.hostname);
   
-  // Determine basename for GitHub Pages vs custom domain
-  const isGitHubPages = window.location.hostname.includes('github.io');
+  // Only use basename for GitHub Pages, not for custom domains
+  const isGitHubPages = window.location.hostname === 'mikemacri.github.io';
   const basename = isGitHubPages ? "/momentum-edge-blueprint" : undefined;
   
   console.log("Is GitHub Pages:", isGitHubPages);

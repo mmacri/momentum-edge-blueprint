@@ -6,9 +6,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
-  // Determine base path based on environment
-  const isGitHubPages = process.env.GITHUB_ACTIONS === 'true' || process.env.NODE_ENV === 'production';
-  const base = isGitHubPages ? "/momentum-edge-blueprint/" : "/";
+  // For GitHub Pages deployment, use the repository name as base
+  // For custom domain (mikemacri.com), use root path
+  const base = process.env.GITHUB_ACTIONS === 'true' ? "/momentum-edge-blueprint/" : "/";
 
   return {
     base,
