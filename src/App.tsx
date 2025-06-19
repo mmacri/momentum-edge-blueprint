@@ -48,17 +48,13 @@ const App = () => {
   console.log("Base URL:", import.meta.env.BASE_URL);
   console.log("Production:", import.meta.env.PROD);
   
-  // Determine basename for routing
-  const basename = import.meta.env.PROD ? "/momentum-edge-blueprint" : "";
-  console.log("Router basename:", basename);
-  
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} onError={(error) => console.error("Error boundary caught:", error)}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={basename}>
+          <BrowserRouter>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/services" element={<ServicesPage />} />
