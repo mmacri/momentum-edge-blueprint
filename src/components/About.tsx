@@ -60,12 +60,12 @@ const About = () => {
               </h3>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
                 With over 25 years of experience in technology advisory and strategic consulting, 
-                Mike Macri brings deep expertise across governance, risk management, compliance (GRC), information security, 
+                Momentum Edge Consulting brings deep expertise across governance, risk management, compliance (GRC), information security, 
                 healthcare IT solutions, AI innovation, partner enablement, and comprehensive IT management that delivers measurable results.
               </p>
               <p className="text-gray-600 mb-6 leading-relaxed font-medium">
                 From architecting regulatory compliance programs (HIPAA, SOC 2, ISO 27001) to developing 
-                comprehensive information security and AI governance frameworks, Mike has successfully guided 
+                comprehensive information security and AI governance frameworks, MEC has successfully guided 
                 organizations through complex technology transformations while ensuring compliance, managing risk, 
                 and driving sustainable growth. Guidance available as needed or proactively.
               </p>
@@ -119,7 +119,7 @@ const About = () => {
               <div className="mt-8 bg-slate-900 text-white p-6 rounded-xl shadow-lg">
                 <h4 className="text-xl font-bold mb-3 text-white">Industry Recognition</h4>
                 <p className="text-gray-200 leading-relaxed font-medium">
-                  "Mike's strategic approach to technology implementation and partner enablement 
+                  "MEC's strategic approach to technology implementation and partner enablement 
                   has consistently delivered measurable results across diverse industry verticals with exceptional client satisfaction."
                 </p>
                 <p className="text-green-400 font-semibold mt-3">

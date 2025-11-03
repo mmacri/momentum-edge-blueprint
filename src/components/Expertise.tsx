@@ -183,7 +183,7 @@ const Expertise = () => {
                 <h3 className="text-2xl font-bold text-white mb-6">Industry Recognition</h3>
                 <div className="bg-green-500/20 rounded-lg p-6 border border-green-500/30">
                   <p className="text-gray-200 italic mb-4 leading-relaxed">
-                    "Mike's strategic approach to technology implementation and comprehensive understanding 
+                    "MEC's strategic approach to technology implementation and comprehensive understanding 
                     of healthcare compliance requirements has consistently delivered exceptional results 
                     across diverse industry verticals."
                   </p>
