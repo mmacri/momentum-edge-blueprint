@@ -14,14 +14,14 @@ const Header = () => {
       title: "Strategic Services",
       items: [
         { name: "Virtual CIO & IT Strategy", path: "/services#vcio" },
-        { name: "Virtual CISO & Security", path: "/services#vciso" },
+        { name: "Virtual CISO & GRC", path: "/services#vciso" },
         { name: "Partner & Channel Strategy", path: "/services#partner" }
       ]
     },
     {
       title: "Specialized Solutions",
       items: [
-        { name: "Healthcare IT & HIPAA", path: "/services#healthcare" },
+        { name: "Healthcare IT & Compliance", path: "/services#healthcare" },
         { name: "AI Solutions & Governance", path: "/services#ai" },
         { name: "Cloud & Infrastructure", path: "/services#cloud" }
       ]

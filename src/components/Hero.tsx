@@ -61,7 +61,7 @@ const Hero = () => {
                 </div>
                 <div className="flex items-center group">
                   <CheckCircle className="text-teal-400 mr-3 group-hover:scale-110 transition-transform" size={20} />
-                  <span className="font-medium text-white">HIPAA Compliance Expert</span>
+                  <span className="font-medium text-white">Regulatory & InfoSec Compliance</span>
                 </div>
               </div>
             </div>
@@ -88,8 +88,8 @@ const Hero = () => {
                         <CheckCircle size={16} className="text-white" />
                       </div>
                       <div>
-                        <h4 className="font-semibold mb-1 text-white">Healthcare Expertise</h4>
-                        <p className="text-gray-100 text-sm">HIPAA-compliant solutions for medical practices</p>
+                        <h4 className="font-semibold mb-1 text-white">GRC & InfoSec Excellence</h4>
+                        <p className="text-gray-100 text-sm">Comprehensive governance, risk management, and compliance solutions</p>
                       </div>
                     </div>
                     <div className="flex items-start group/item">

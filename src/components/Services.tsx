@@ -20,27 +20,29 @@ const Services = () => {
     },
     {
       id: "vciso", 
-      title: "Virtual CISO & Cybersecurity Advisory",
-      description: "Strategic cybersecurity oversight and compliance guidance to protect your business and meet regulatory requirements.",
+      title: "Virtual CISO & GRC Advisory",
+      description: "Strategic cybersecurity leadership, governance, risk management, and compliance (GRC) guidance to protect your business and meet regulatory requirements across all industries.",
       features: [
-        "Cybersecurity strategy and risk assessment",
-        "Compliance frameworks (HIPAA, SOC 2, NIST, ISO 27001)",
-        "Security policy development and implementation",
-        "Incident response planning and management",
-        "Security awareness training and governance"
+        "Cybersecurity strategy and comprehensive risk assessment",
+        "Compliance frameworks (HIPAA, SOC 2, NIST, ISO 27001, GDPR)",
+        "Information security policy development and governance",
+        "Security program management and maturity assessment",
+        "Incident response planning, breach management, and forensics",
+        "Security awareness training and culture development"
       ],
       icon: Shield,
       color: "text-yellow-500"
     },
     {
       id: "healthcare",
-      title: "Healthcare IT Solutions",
-      description: "Specialized technology management for dental practices, medical offices, and healthcare facilities with complete HIPAA compliance.",
+      title: "Healthcare IT & Compliance Solutions",
+      description: "Specialized technology management for healthcare organizations with comprehensive HIPAA compliance, regulatory adherence, and information security programs.",
       features: [
-        "HIPAA compliance audits and implementation",
-        "EHR/EMR system optimization and support",
-        "Dental practice technology management",
-        "Patient data security and privacy protection",
+        "HIPAA compliance audits, gap analysis, and implementation",
+        "Healthcare information security and privacy programs",
+        "EHR/EMR system optimization, integration, and support",
+        "Dental and medical practice technology management",
+        "Patient data security, encryption, and access controls",
         "Telehealth infrastructure and secure communications"
       ],
       icon: Hospital,
