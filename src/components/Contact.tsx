@@ -27,7 +27,7 @@ const Contact = () => {
   });
 
   const onSubmit = (data: ContactFormData) => {
-    const subject = encodeURIComponent("Technology Assessment Request");
+    const subject = encodeURIComponent("Technical Engagement Request");
     const body = encodeURIComponent(
       `Name: ${data.name}\n` +
       `Email: ${data.email}\n` +
@@ -48,11 +48,18 @@ const Contact = () => {
 
   const services = [
     "Technology Strategy & CIO Advisory",
-    "GRC & Information Security Compliance", 
+    "GRC & InfoSec Solutions for Medium, Enterprise, State and Federal", 
     "AI Solutions & Governance",
     "Cybersecurity & Risk Management",
     "Cloud Infrastructure & Migration",
     "Partner Enablement & Strategic Alliances"
+  ];
+
+  const stats = [
+    { label: "Years of Technology Advisory", value: "25+" },
+    { label: "Successful IT Implementations", value: "1000's" },
+    { label: "Dental & Medical Practice Management Solutions", value: "✓" },
+    { label: "Small to Medium Office Management Solutions", value: "✓" }
   ];
 
   return (
@@ -184,17 +191,27 @@ const Contact = () => {
                 and hands-on implementation across all areas of business technology.
               </p>
               
-              <div className="space-y-3">
+              <div className="space-y-3 mb-8">
                 {services.map((service, index) => (
                   <div key={index} className="flex items-center">
-                    <span className="text-green-400 mr-3 font-bold">✓</span>
+                    <span className="text-primary mr-3 font-bold">✓</span>
                     <span className="font-medium">{service}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-8 p-4 bg-green-500/20 rounded-lg border border-green-500/30">
-                <h4 className="font-bold text-green-400 mb-2">Flexible Engagement Models</h4>
+              {/* Stats Section */}
+              <div className="grid grid-cols-2 gap-4 mb-8">
+                {stats.map((stat, index) => (
+                  <div key={index} className="bg-white/5 rounded-lg p-4 border border-white/10">
+                    <div className="text-2xl font-bold text-primary mb-1">{stat.value}</div>
+                    <div className="text-sm text-gray-300">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="p-4 bg-primary/20 rounded-lg border border-primary/30">
+                <h4 className="font-bold text-primary mb-2">Flexible Engagement Models</h4>
                 <p className="text-gray-300 text-sm">
                   Project-based consulting, ongoing strategic advisory, or comprehensive managed services - 
                   we adapt to your needs and budget.
