@@ -42,12 +42,18 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: '#4caf50',
+					DEFAULT: '#14b8a6',
 					foreground: '#ffffff'
 				},
-				green: {
-					500: '#4caf50',
-					600: '#388e3c'
+				teal: {
+					400: '#2dd4bf',
+					500: '#14b8a6',
+					600: '#0d9488',
+					700: '#0f766e'
+				},
+				cyan: {
+					400: '#22d3ee',
+					500: '#06b6d4'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',

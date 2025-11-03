@@ -130,8 +130,8 @@ const Services = () => {
             with flexible engagement models and 100% vendor-neutral guidance.
           </p>
           
-          <div className="mt-8 bg-green-50 rounded-xl p-6 max-w-4xl mx-auto border border-green-200">
-            <p className="text-green-800 font-semibold">
+          <div className="mt-8 bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 max-w-4xl mx-auto border border-teal-200">
+            <p className="text-teal-800 font-semibold">
               ✓ No Long-Term Contracts &nbsp;•&nbsp; ✓ 100% Vendor Neutral &nbsp;•&nbsp; ✓ Enterprise Expertise &nbsp;•&nbsp; ✓ Flexible Engagements
             </p>
           </div>
@@ -150,7 +150,7 @@ const Services = () => {
                   <div className={`${service.color} mb-4 flex justify-center`}>
                     <IconComponent size={48} className="group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <CardTitle className="text-xl text-slate-900 mb-3 font-semibold group-hover:text-green-500 transition-colors duration-300">
+                  <CardTitle className="text-xl text-slate-900 mb-3 font-semibold group-hover:text-teal-600 transition-colors duration-300">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-gray-600 font-medium leading-relaxed">
@@ -160,8 +160,8 @@ const Services = () => {
                 <CardContent className="flex-1">
                   <ul className="space-y-3">
                     {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start">
-                        <span className="text-green-500 mr-3 mt-1 font-bold">✓</span>
+                      <li key={featureIndex} className="flex items-start group/feature">
+                        <span className="text-teal-500 mr-3 mt-1 font-bold group-hover/feature:scale-110 transition-transform inline-block">✓</span>
                         <span className="text-sm font-medium text-gray-700 leading-relaxed">{feature}</span>
                       </li>
                     ))}
@@ -180,7 +180,8 @@ const Services = () => {
             </p>
             <a 
               href="mailto:momentumedgeconsulting@gmail.com?subject=Free Technology Assessment Request&body=Hello, I would like to schedule a complimentary technology assessment and strategic consultation to discuss my business needs."
-              className="bg-green-500 hover:bg-green-600 text-white font-semibold text-lg px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center"
+              className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold text-lg px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center justify-center"
+              style={{ boxShadow: '0 8px 24px rgba(20, 184, 166, 0.4)' }}
             >
               Schedule Your Free Assessment
             </a>

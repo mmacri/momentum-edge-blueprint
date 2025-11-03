@@ -18,8 +18,8 @@ const Header = () => {
     { name: "Strategic Go-To-Market", path: "/services#gtm" }
   ];
 
-  // Use the correct path for custom domain
-  const logoPath = "/lovable-uploads/458cfbb1-8d83-4f50-8855-47b43d47534b.png";
+  // Use the MEC logo
+  const logoPath = "/mec-logo.png";
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -27,11 +27,11 @@ const Header = () => {
         <div className="flex justify-between items-center py-2">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-opacity duration-300">
+            <Link to="/" className="flex items-center space-x-3 hover:opacity-90 transition-all duration-300 hover:scale-105">
               <img 
                 src={logoPath}
-                alt="Momentum Edge Consulting" 
-                className="h-32 w-80 md:h-36 md:w-96 lg:h-40 lg:w-[28rem] xl:h-44 xl:w-[32rem] object-contain"
+                alt="Momentum Edge Consulting - MEC" 
+                className="h-16 w-auto md:h-20 lg:h-24 object-contain"
                 onError={(e) => {
                   console.error("Logo failed to load:", logoPath);
                   // Fallback to text if image fails
@@ -62,7 +62,7 @@ const Header = () => {
                     <a
                       key={index}
                       href={service.path}
-                      className="block py-3 px-4 text-sm font-medium text-gray-700 hover:text-green-500 hover:bg-green-50 rounded-md transition-all duration-300"
+                      className="block py-3 px-4 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-all duration-300"
                     >
                       {service.name}
                     </a>
@@ -83,7 +83,8 @@ const Header = () => {
             
             <a 
               href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
-              className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover-scale shadow-lg inline-flex items-center justify-center"
+              className="bg-teal-500 hover:bg-teal-600 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 hover-scale shadow-lg inline-flex items-center justify-center"
+              style={{ boxShadow: '0 4px 14px rgba(20, 184, 166, 0.4)' }}
             >
               Free Strategy Session
             </a>
@@ -118,7 +119,7 @@ const Header = () => {
                   <a
                     key={index}
                     href={service.path}
-                    className="block py-2 pl-4 text-sm font-medium text-gray-600 hover:text-green-500 transition-colors duration-300"
+                    className="block py-2 pl-4 text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors duration-300"
                   >
                     {service.name}
                   </a>
@@ -135,7 +136,7 @@ const Header = () => {
               </Link>
               <a 
                 href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
-                className="bg-green-500 hover:bg-green-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4 text-center inline-block"
+                className="bg-teal-500 hover:bg-teal-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4 text-center inline-block"
               >
                 Free Strategy Session
               </a>
