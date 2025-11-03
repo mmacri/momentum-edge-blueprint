@@ -1,22 +1,56 @@
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const services = [
-    { name: "All Services", path: "/services" },
-    { name: "Areas of Expertise", path: "/expertise" },
-    { name: "Outsourced CIO & IT Advisory", path: "/services#cio" },
-    { name: "Healthcare IT Solutions", path: "/services#healthcare" }, 
-    { name: "AI Solutions & Governance", path: "/services#ai" },
-    { name: "Small Office & Remote IT", path: "/services#small-office" },
-    { name: "Partner Enablement", path: "/services#partner" },
-    { name: "Strategic Go-To-Market", path: "/services#gtm" }
+  const serviceCategories = [
+    {
+      title: "Strategic Services",
+      items: [
+        { name: "Virtual CIO & IT Strategy", path: "/services#vcio" },
+        { name: "Virtual CISO & Security", path: "/services#vciso" },
+        { name: "Partner & Channel Strategy", path: "/services#partner" }
+      ]
+    },
+    {
+      title: "Specialized Solutions",
+      items: [
+        { name: "Healthcare IT & HIPAA", path: "/services#healthcare" },
+        { name: "AI Solutions & Governance", path: "/services#ai" },
+        { name: "Cloud & Infrastructure", path: "/services#cloud" }
+      ]
+    },
+    {
+      title: "Implementation",
+      items: [
+        { name: "Small Office & Remote IT", path: "/services#small-office" },
+        { name: "IT Projects & Assessments", path: "/services#projects" }
+      ]
+    }
   ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleServiceClick = () => {
+    setIsServicesOpen(false);
+    setIsMenuOpen(false);
+  };
 
   // Use the MEC logo
   const logoPath = "/mec-logo.png";
@@ -45,30 +79,59 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             <Link to="/" className="nav-link">
               Home
             </Link>
             
-            {/* Services Dropdown */}
-            <div className="relative group">
-              <Link to="/services" className="flex items-center nav-link">
+            {/* Services Mega Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button 
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+                className="flex items-center nav-link"
+              >
                 Services
-                <ChevronDown className="ml-1 h-4 w-4 group-hover:rotate-180 transition-transform duration-300" />
-              </Link>
-              <div className="absolute top-full left-0 mt-2 w-80 bg-white shadow-xl rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200">
-                <div className="p-4">
-                  {services.map((service, index) => (
-                    <a
-                      key={index}
-                      href={service.path}
-                      className="block py-3 px-4 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-all duration-300"
-                    >
-                      {service.name}
-                    </a>
-                  ))}
+                <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isServicesOpen && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[640px] bg-white shadow-2xl rounded-lg z-50 border border-teal-100 animate-fade-in">
+                  <div className="p-6">
+                    <div className="grid grid-cols-3 gap-6">
+                      {serviceCategories.map((category, idx) => (
+                        <div key={idx}>
+                          <h3 className="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-3">
+                            {category.title}
+                          </h3>
+                          <ul className="space-y-2">
+                            {category.items.map((item, itemIdx) => (
+                              <li key={itemIdx}>
+                                <a
+                                  href={item.path}
+                                  onClick={handleServiceClick}
+                                  className="block py-2 px-3 text-sm font-medium text-gray-700 hover:text-teal-600 hover:bg-teal-50 rounded-md transition-all duration-200"
+                                >
+                                  {item.name}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="mt-4 pt-4 border-t border-gray-200">
+                      <Link 
+                        to="/services"
+                        onClick={handleServiceClick}
+                        className="text-sm font-semibold text-teal-600 hover:text-teal-700 flex items-center"
+                      >
+                        View All Services →
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             <Link to="/industries" className="nav-link">
@@ -106,37 +169,70 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden pb-6 animate-fade-in">
-            <div className="flex flex-col space-y-4">
-              <Link to="/" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
+          <div className="lg:hidden pb-6 animate-fade-in max-h-[70vh] overflow-y-auto">
+            <div className="flex flex-col space-y-3">
+              <Link 
+                to="/" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-teal-600 transition-colors duration-300 font-medium py-2"
+              >
                 Home
               </Link>
+              
               <div>
-                <Link to="/services" className="text-gray-900 font-semibold mb-3 block hover:text-green-500 transition-colors py-2">
-                  Services
+                <Link 
+                  to="/services" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-gray-900 font-semibold mb-2 block hover:text-teal-600 transition-colors py-2"
+                >
+                  All Services
                 </Link>
-                {services.map((service, index) => (
-                  <a
-                    key={index}
-                    href={service.path}
-                    className="block py-2 pl-4 text-sm font-medium text-gray-600 hover:text-teal-600 transition-colors duration-300"
-                  >
-                    {service.name}
-                  </a>
+                
+                {serviceCategories.map((category, idx) => (
+                  <div key={idx} className="mb-3">
+                    <p className="text-xs font-semibold text-teal-600 uppercase tracking-wide mb-2 pl-4">
+                      {category.title}
+                    </p>
+                    {category.items.map((item, itemIdx) => (
+                      <a
+                        key={itemIdx}
+                        href={item.path}
+                        onClick={handleServiceClick}
+                        className="block py-2 pl-6 text-sm font-medium text-gray-600 hover:text-teal-600 hover:bg-teal-50 rounded transition-colors duration-300"
+                      >
+                        {item.name}
+                      </a>
+                    ))}
+                  </div>
                 ))}
               </div>
-              <Link to="/industries" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
+              
+              <Link 
+                to="/industries" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-teal-600 transition-colors duration-300 font-medium py-2"
+              >
                 Industries
               </Link>
-              <Link to="/about" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
+              <Link 
+                to="/about" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-teal-600 transition-colors duration-300 font-medium py-2"
+              >
                 About
               </Link>
-              <Link to="/contact" className="text-gray-700 hover:text-green-500 transition-colors duration-300 font-medium py-2">
+              <Link 
+                to="/contact" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-gray-700 hover:text-teal-600 transition-colors duration-300 font-medium py-2"
+              >
                 Contact
               </Link>
+              
               <a 
                 href="mailto:momentumedgeconsulting@gmail.com?subject=Free Strategy Session Request&body=Hello, I would like to schedule a free strategy session to discuss my business technology needs."
-                className="bg-teal-500 hover:bg-teal-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4 text-center inline-block"
+                onClick={() => setIsMenuOpen(false)}
+                className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-semibold w-full py-3 rounded-lg transition-all duration-300 shadow-lg mt-4 text-center inline-block"
               >
                 Free Strategy Session
               </a>
