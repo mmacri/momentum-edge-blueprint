@@ -69,35 +69,6 @@ const About = () => {
                 organizations through complex technology transformations while ensuring compliance, managing risk, 
                 and driving sustainable growth. Guidance available as needed or proactively.
               </p>
-              <div className="bg-gray-50 p-6 rounded-xl shadow-lg border border-gray-100">
-                <h4 className="text-xl font-bold text-slate-900 mb-4">Professional Certifications</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center font-medium">
-                    <span className="text-green-500 mr-2">•</span>
-                    VMware Certified Professional
-                  </li>
-                  <li className="flex items-center font-medium">
-                    <span className="text-green-500 mr-2">•</span>
-                    AWS Certified
-                  </li>
-                  <li className="flex items-center font-medium">
-                    <span className="text-green-500 mr-2">•</span>
-                    Microsoft Certified
-                  </li>
-                  <li className="flex items-center font-medium">
-                    <span className="text-green-500 mr-2">•</span>
-                    CISSP / Security+ (In Progress)
-                  </li>
-                  <li className="flex items-center font-medium">
-                    <span className="text-green-500 mr-2">•</span>
-                    ISO 27001 Lead Implementer
-                  </li>
-                  <li className="flex items-center font-medium">
-                    <span className="text-green-500 mr-2">•</span>
-                    AI Ethics & Governance Certified
-                  </li>
-                </ul>
-              </div>
             </div>
 
             <div className="animate-scale-in">
@@ -114,17 +85,6 @@ const About = () => {
                     <span className="font-semibold text-gray-700">{area}</span>
                   </div>
                 ))}
-              </div>
-              
-              <div className="mt-8 bg-slate-900 text-white p-6 rounded-xl shadow-lg">
-                <h4 className="text-xl font-bold mb-3 text-white">Industry Recognition</h4>
-                <p className="text-gray-200 leading-relaxed font-medium">
-                  "MEC's strategic approach to technology implementation and partner enablement 
-                  has consistently delivered measurable results across diverse industry verticals with exceptional client satisfaction."
-                </p>
-                <p className="text-green-400 font-semibold mt-3">
-                  - Technology Leadership Awards 2023
-                </p>
               </div>
             </div>
           </div>

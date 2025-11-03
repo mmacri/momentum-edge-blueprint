@@ -109,15 +109,6 @@ const Expertise = () => {
     }
   ];
 
-  const certifications = [
-    "VMware Certified Professional (VCP)",
-    "AWS Certified Solutions Architect",
-    "Microsoft Certified: Azure Solutions Architect Expert",
-    "Google Cloud Professional Cloud Architect",
-    "CISSP - Certified Information Systems Security Professional",
-    "AI Ethics & Governance Certified"
-  ];
-
   return (
     <section id="expertise" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -163,36 +154,6 @@ const Expertise = () => {
                 </Card>
               );
             })}
-          </div>
-
-          {/* Certifications & Recognition */}
-          <div className="bg-slate-900 rounded-xl p-8 mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Professional Certifications</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {certifications.map((cert, index) => (
-                    <div key={index} className="flex items-center text-gray-300">
-                      <span className="text-green-400 mr-3 font-bold">✓</span>
-                      <span className="font-medium text-sm">{cert}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center lg:text-left">
-                <h3 className="text-2xl font-bold text-white mb-6">Industry Recognition</h3>
-                <div className="bg-green-500/20 rounded-lg p-6 border border-green-500/30">
-                  <p className="text-gray-200 italic mb-4 leading-relaxed">
-                    "MEC's strategic approach to technology implementation and comprehensive understanding 
-                    of healthcare compliance requirements has consistently delivered exceptional results 
-                    across diverse industry verticals."
-                  </p>
-                  <p className="text-green-400 font-semibold">
-                    - Technology Leadership Excellence Award 2023
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Call to Action */}
